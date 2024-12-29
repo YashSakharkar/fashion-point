@@ -1,85 +1,115 @@
-/* .footer{
-    border: 2px solid green;
-}
-.footer-content{
-    border: 2px solid red;
-}
-
-.footer-links{
-    border: 2px solid pink;
-}
-
-.footer-social{
-    border: 2px solid whitesmoke;
-}
- */
-
-
-
-
-
-
-
 .footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+  background-color: #333;
+  color: whitesmoke;
+  width: 100%;
+  padding: 1px 0;
+  text-align: center;
+}
 
-  }
-  
-  .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .footer p {
-    margin: 0;
-    font-size: 14px;
-  }
-  
-  .footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .footer-links li {
-    margin: 0 10px;
-  }
-  
-  .footer-links a {
-    color: #61dafb;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  
-  .footer-links a:hover {
-    font-weight: bold;
-     color: orange;    
-  }
-  
-  .footer-social {
-    margin: 5px;
-  }
-  
-  .footer-social a {
-    margin: 0 10px;
-    color: #61dafb;
-    font-size: 18px;
-    text-decoration: none;
-  }
-  
-  .footer-social a:hover {
-    color: orange; 
-    font-size: 20px;
-  }
-   
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
 
+/* .logo {
+  border: 2px solid red;
+  flex: 1;
+  /* text-align: left; */
+  /* padding: 10px ; *
+  align-items: center;
+
+} */
+
+
+.logo {
+  /* border: 2px solid red; */
+  flex: 1;
+  display: flex; /* Makes the container a flexbox */
+  flex-direction: column; /* Stacks the children vertically */
+  align-items: center; /* Centers the children horizontally */
+  justify-content: flex-start; /* Positions the children at the top */
+  padding: 10px 0; /* Adds padding around the content */
+}
+
+.logo img {
+  max-width: 150px; /* Increased width for the logo */
+  height: auto; /* Maintains the aspect ratio */
+  margin-bottom: 10px; /* Adds space below the image */
+}
+
+
+
+/* .logo p {
+  border: 2px solid red;
+  color: #ddd;
+  font-size: 14px;
+  line-height: 1.5;
+} */
+
+.links-info {
+  display: flex;
+  flex: 2;
+  justify-content: space-around;
+}
+
+.usefull,
+.follow,
+.address {
+  flex: 1;
+  padding: 10px;
+  text-align: left;
+}
+
+.usefull h2,
+.follow h2,
+.address h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.usefull ul,
+.follow ul,
+.address ul {
+  list-style: none;
+  padding: 0;
+}
+
+.usefull li,
+.follow li,
+.address li {
+  display: flex;
+  align-items: center; /* Align icon and text vertically */
+  margin-bottom: 10px;
+}
+
+.usefull li a,
+.follow li a,
+.address li a {
+  color: #ddd;
+  text-decoration: none;
+  display: flex; /* Makes the link container a flex box */
+  align-items: center; /* Aligns icon and text vertically */
+  gap: 8px; /* Adds space between icon and text */
+}
+
+.usefull li a:hover,
+.follow li a:hover,
+.address li a:hover {
+  color: #ffcc00;
+ 
+}
+
+.footer-bottom {
+  background-color: #222;
+  color: #aaa;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
 
