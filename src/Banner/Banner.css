@@ -1,8 +1,8 @@
 
 
 .body-banner-image img{
-    width: fit-content;
-    height:850px;
+    width: 100%;
+    /* height:850px; */
 }
 .banner-header {
     position: absolute;
