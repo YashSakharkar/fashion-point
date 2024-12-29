@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.6;
+ }
+
+ .header{
+    background-color: #333;
+    color: #fff;
+    padding: 0px 50px;
+    margin: 0 auto;
+ }
+ .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+ .menu-bar{
+   display: flex;
+   gap: 30px;
+   margin: 0 auto;
+ }
+ .menu-bar li{
+    font-size: 18px;
+     list-style: none;
+ }
+ .header-menu{
+    display: flex;
+ }
+ .logo-img img{
+    
+  width: 150px;
+  height: auto;
+ }
+ .language-logo{
+   display: flex;
+   /* align-items: center; */
+ } 
+ .language-logo img{
+   width: 33px;
+   height: 30px;
+ }
+ .language-logo span{
+   padding-left: 5px;
+ }
