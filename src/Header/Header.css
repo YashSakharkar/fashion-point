@@ -26,6 +26,7 @@
 
 
  .container{
+  width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,6 +47,7 @@
     
   width: 150px;
   height: auto;
+
  }
  .language-logo{
    display: flex;
