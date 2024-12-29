@@ -1,6 +1,8 @@
 import React from 'react';
 import './Footer.css'; 
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Footer = () => {
   return (
@@ -13,10 +15,12 @@ const Footer = () => {
         </ul>
         <div className="footer-social">
           <a href="https://facebook.com" target="_blank" rel='noreferrer' >
-            <FaFacebook />
+            {/* <FaFacebook /> */}
+            <FacebookIcon/>
           </a>
           <a href="https://instagram.com" target="_blank" rel='noreferrer' >
-          <FaInstagram/>
+          {/* <FaInstagram/> */}
+          <InstagramIcon/>
           </a>
          
         </div>

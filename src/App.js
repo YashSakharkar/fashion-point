@@ -6,12 +6,8 @@ function App() {
   return (
     <div >
     <Header/>
-<<<<<<< HEAD
     
      <Footer/>
-
-=======
->>>>>>> 3ded7ba65ce1e6ca3a256571a9a8392d799ca3e7
     </div>
   );
 }
