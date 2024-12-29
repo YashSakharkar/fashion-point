@@ -1,6 +1,5 @@
 import React from 'react';
 import './Footer.css'; 
-import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 

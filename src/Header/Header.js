@@ -8,9 +8,11 @@ const Header = () => {
        <div className='container'>
        <nav className='header-menu'>
               <ul className='menu-bar'>
-                 <li>Home</li>
-                 <li>About-Us</li>
-                 <li>Contact</li>
+                 <li>HOME</li>
+                 <li>MENS</li>
+                 <li>WOMENS</li>
+                 <li>KIDS</li>
+                 <li>ACCESORIES</li>
               </ul>
           </nav>
           <div className='logo-img'>
