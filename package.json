@@ -3,14 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
+    "@fortawesome/fontawesome-free": "^6.7.2",
+=======
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.3.0",
     "@mui/material": "^6.3.0",
+>>>>>>> 3ded7ba65ce1e6ca3a256571a9a8392d799ca3e7
     "cra-template": "1.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-scripts": "5.0.1"
+    "react-icons": "^5.4.0",
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
