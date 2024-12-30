@@ -9,11 +9,11 @@ const Card = () => {
     <div className="card-container">
       {
         
-        CardImages.map((image) => {
+        CardImages.map((image,index) => {
         return (
           
             
-              <div className="box">
+              <div className="box" key={index}>
                 <img src={image.cardImage} alt={image.alt} />
 
                 <div className="over-img">
