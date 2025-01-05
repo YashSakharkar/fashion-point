@@ -1,373 +1,374 @@
-const productsJsonData=[{
+const productsJsonData=[
+    {
     "MENS": {
       "SHIRTS": [
         {
-          "TITLE": "Shirt1",
-          "DESCRIPTION": "Formal white shirt",
-          "IMAGE": "url1",
+          "TITLE": "Formal white shirt",
+          "DESCRIPTION": "Mildin Men's Solid Formal Shirt",
+          "IMAGE": "./images/mens/pants/Formal black pants.webp",
           "PRICE": "500RS"
         },
         {
-          "TITLE": "Casual blue shirt",
-          "DESCRIPTION": "Navy Blue Plain I Causal Shirt I Regular Fit I 100% Cotton Shirt",
+          "TITLE": "Shirt2",
+          "DESCRIPTION": "Casual blue shirt",
           "IMAGE": "url2",
           "PRICE": "600RS"
         },
         {
-          "TITLE": "Shirt3",
-          "DESCRIPTION": "Pista Green - Plain Cotton Shirts",
+          "TITLE": "Striped cotton shirt",
+          "DESCRIPTION": "BLUE COLOR LYCRA LINING CASUAL SHIRT",
           "IMAGE": "url3",
           "PRICE": "700RS"
         },
         {
-          "TITLE": "Shirt4",
-          "DESCRIPTION": "Denim shirt",
+          "TITLE": "Denim shirt",
+          "DESCRIPTION": "Shade Double Pocket Cut Away Collor Denim Shirt For Men",
           "IMAGE": "url4",
           "PRICE": "800RS"
         },
         {
-          "TITLE": "Shirt5",
-          "DESCRIPTION": "Slim fit shirt",
+          "TITLE": "Slim fit shirt",
+          "DESCRIPTION": "Pista Green - Plain Cotton Shirts",
           "IMAGE": "url5",
           "PRICE": "750RS"
         },
         {
-          "TITLE": "Shirt6",
-          "DESCRIPTION": "Plaid shirt",
+          "TITLE": "Plaid shirt",
+          "DESCRIPTION": "Red and blue Indigo cotton check shirt",
           "IMAGE": "url6",
           "PRICE": "650RS"
         },
         {
-          "TITLE": "Shirt7",
-          "DESCRIPTION": "Linen summer shirt",
+          "TITLE": "Linen summer shirt",
+          "DESCRIPTION": "Cool and Calm: The Perfect Sky Blue-White Gradient Shirt for Any Occasion",
           "IMAGE": "url7",
           "PRICE": "850RS"
         },
         {
-          "TITLE": "Shirt8",
-          "DESCRIPTION": "Office wear shirt",
+          "TITLE": "Office wear shirt",
+          "DESCRIPTION": "Raymond Blue Solid Slim Fit Cotton Formal Shirt",
           "IMAGE": "url8",
           "PRICE": "550RS"
         },
         {
-          "TITLE": "Shirt9",
-          "DESCRIPTION": "Party wear shirt",
+          "TITLE": "Party wear shirt",
+          "DESCRIPTION": "ELEVATED PAISLEY PRINT SHIRTPAIZERR - PINK",
           "IMAGE": "url9",
           "PRICE": "950RS"
         },
         {
-          "TITLE": "Shirt10",
-          "DESCRIPTION": "Classic black shirt",
+          "TITLE": "Classic black shirt",
+          "DESCRIPTION": "Raymond Black Solid Regular Fit Cotton Formal Shirt",
           "IMAGE": "url10",
           "PRICE": "1000RS"
         }
       ],
       "PANTS": [
         {
-          "TITLE": "Pant1",
-          "DESCRIPTION": "Formal black pants",
+          "TITLE": "Formal black pants",
+          "DESCRIPTION": "Men Black Slim Fit Solid Polyester Blend Trouser",
           "IMAGE": "url1",
           "PRICE": "1000RS"
         },
         {
-          "TITLE": "Pant2",
-          "DESCRIPTION": "Casual khaki pants",
+          "TITLE": "Casual khaki pants",
+          "DESCRIPTION": "SKINNY FIT CHINO TROUSERS",
           "IMAGE": "url2",
           "PRICE": "900RS"
         },
         {
-          "TITLE": "Pant3",
-          "DESCRIPTION": "Slim fit jeans",
+          "TITLE": "Slim fit jeans",
+          "DESCRIPTION": "Men Blue Slim Tapered Fit Jacquard Cotton Blend Jeans",
           "IMAGE": "url3",
           "PRICE": "1200RS"
         },
         {
-          "TITLE": "Pant4",
-          "DESCRIPTION": "Relaxed fit chinos",
+          "TITLE": "Relaxed fit chinos",
+          "DESCRIPTION": "Urban Hike Carpenter Relaxed Jeans: Dark Green",
           "IMAGE": "url4",
           "PRICE": "1100RS"
         },
         {
-          "TITLE": "Pant5",
-          "DESCRIPTION": "Stretchable trousers",
+          "TITLE": "Stretchable trousers",
+          "DESCRIPTION": "The Linen Easy Pants",
           "IMAGE": "url5",
           "PRICE": "1300RS"
         },
         {
-          "TITLE": "Pant6",
-          "DESCRIPTION": "Cargo pants",
+          "TITLE": "Cargo pants",
+          "DESCRIPTION": "The Hemp Twill Cargo Pants",
           "IMAGE": "url6",
           "PRICE": "950RS"
         },
         {
-          "TITLE": "Pant7",
-          "DESCRIPTION": "Denim joggers",
+          "TITLE": "Denim joggers",
+          "DESCRIPTION": "Men Blue Jogger Fit Jacquard Cotton Blend Jeans",
           "IMAGE": "url7",
           "PRICE": "1250RS"
         },
         {
-          "TITLE": "Pant8",
-          "DESCRIPTION": "Classic grey trousers",
+          "TITLE": "Classic grey trousers",
+          "DESCRIPTION": "Men Grey Solid Formal Trousers",
           "IMAGE": "url8",
           "PRICE": "1400RS"
         },
         {
-          "TITLE": "Pant9",
-          "DESCRIPTION": "Workout track pants",
+          "TITLE": "Workout track pants",
+          "DESCRIPTION": "Hyper Cord Trackpant - Grey",
           "IMAGE": "url9",
           "PRICE": "850RS"
         },
         {
-          "TITLE": "Pant10",
-          "DESCRIPTION": "Formal navy trousers",
+          "TITLE": "Formal navy trousers",
+          "DESCRIPTION": "Navy Elasticated waist cotton Pants with side pockets",
           "IMAGE": "url10",
           "PRICE": "1450RS"
         }
       ],
       "JACKETS": [
         {
-          "TITLE": "Jacket1",
-          "DESCRIPTION": "Leather jacket",
+          "TITLE": "Leather jacket",
+          "DESCRIPTION": "Helstons Cruiser Rag Leather Jacket",
           "IMAGE": "url1",
           "PRICE": "3000RS"
         },
         {
-          "TITLE": "Jacket2",
-          "DESCRIPTION": "Bomber jacket",
+          "TITLE": "Bomber jacket",
+          "DESCRIPTION": "The Linen Bomber Jacket",
           "IMAGE": "url2",
           "PRICE": "2500RS"
         },
         {
-          "TITLE": "Jacket3",
-          "DESCRIPTION": "Denim jacket",
+          "TITLE": "Denim jacket",
+          "DESCRIPTION": "Men Solid Spread Collar Blue Denim Jacket",
           "IMAGE": "url3",
           "PRICE": "2000RS"
         },
         {
-          "TITLE": "Jacket4",
-          "DESCRIPTION": "Blazer jacket",
+          "TITLE": "Blazer jacket",
+          "DESCRIPTION": "Blue Blazer Formal",
           "IMAGE": "url4",
           "PRICE": "3500RS"
         },
         {
-          "TITLE": "Jacket5",
-          "DESCRIPTION": "Puffer jacket",
+          "TITLE": "Puffer jacket",
+          "DESCRIPTION": "Down Feather Jacket",
           "IMAGE": "url5",
           "PRICE": "4000RS"
         },
         {
-          "TITLE": "Jacket6",
-          "DESCRIPTION": "Windbreaker jacket",
+          "TITLE": "Windbreaker jacket",
+          "DESCRIPTION": "BoldFit Windcheater For Men Lightweight Jacket For Men Winter Wear Polyester Wind Cheaters For Men Track Jackets For Men Regular Fit Mens Jacket Multipurpose Stylish Men Jacket - Blue White M",
           "IMAGE": "url6",
           "PRICE": "1500RS"
         },
         {
-          "TITLE": "Jacket7",
-          "DESCRIPTION": "Hooded jacket",
+          "TITLE": "Hooded jacket",
+          "DESCRIPTION": "Lymio Wool Blend Hooded Neck Hoodies || Sweatshirt for Unisex || Unisex Hoodie (H-46-47)",
           "IMAGE": "url7",
           "PRICE": "1800RS"
         },
         {
-          "TITLE": "Jacket8",
-          "DESCRIPTION": "Parkas",
+          "TITLE": "Parkas",
+          "DESCRIPTION": "ColorPlus Men's Hooded Faux Fur Trim Parka Jacket",
           "IMAGE": "url8",
           "PRICE": "4200RS"
         },
         {
-          "TITLE": "Jacket9",
-          "DESCRIPTION": "Raincoat jacket",
+          "TITLE": "Raincoat jacket",
+          "DESCRIPTION": "La' exclusivite Raincoat for men",
           "IMAGE": "url9",
           "PRICE": "1200RS"
         },
         {
-          "TITLE": "Jacket10",
-          "DESCRIPTION": "Peacoat jacket",
+          "TITLE": "Peacoat jacket",
+          "DESCRIPTION": "Brandit Pea Coat Jacket",
           "IMAGE": "url10",
           "PRICE": "5000RS"
         }
       ],
       "T-SHIRTS": [
         {
-          "TITLE": "T-Shirt1",
-          "DESCRIPTION": "Round neck t-shirt",
+          "TITLE": "Round neck t-shirt",
+          "DESCRIPTION": "Round Neck Half Sleeve Plain T-Shirt - Petrol Blue - Men",
           "IMAGE": "url1",
           "PRICE": "500RS"
         },
         {
-          "TITLE": "T-Shirt2",
-          "DESCRIPTION": "V-neck t-shirt",
+          "TITLE": "V-neck t-shirt",
+          "DESCRIPTION": "Poomer T-Shirt Solid V Neck - Maroon",
           "IMAGE": "url2",
           "PRICE": "600RS"
         },
         {
-          "TITLE": "T-Shirt3",
-          "DESCRIPTION": "Polo t-shirt",
+          "TITLE": "Polo t-shirt",
+          "DESCRIPTION": "100% Pure Supima Cotton Polo - Rust (Deep Maroon)",
           "IMAGE": "url3",
           "PRICE": "700RS"
         },
         {
-          "TITLE": "T-Shirt4",
-          "DESCRIPTION": "Striped t-shirt",
+          "TITLE": "Striped t-shirt",
+          "DESCRIPTION": "Yilden Men's Round Neck Striped T-Shirt",
           "IMAGE": "url4",
           "PRICE": "550RS"
         },
         {
-          "TITLE": "T-Shirt5",
-          "DESCRIPTION": "Graphic t-shirt",
+          "TITLE": "Graphic t-shirt",
+          "DESCRIPTION": "NEVER GIVE UP STAY STRONG T-SHIRT",
           "IMAGE": "url5",
           "PRICE": "800RS"
         },
         {
-          "TITLE": "T-Shirt6",
-          "DESCRIPTION": "Plain white t-shirt",
+          "TITLE": "Plain white t-shirt",
+          "DESCRIPTION": "White Cotton IQ Basics",
           "IMAGE": "url6",
           "PRICE": "400RS"
         },
         {
-          "TITLE": "T-Shirt7",
+          "TITLE": "Full sleeve t-shirt",
           "DESCRIPTION": "Full sleeve t-shirt",
           "IMAGE": "url7",
           "PRICE": "650RS"
         },
         {
-          "TITLE": "T-Shirt8",
-          "DESCRIPTION": "Henley t-shirt",
+          "TITLE": "Henley t-shirt",
+          "DESCRIPTION": "100% Pure Supima Cotton Henley Full Sleeve - Beach (Beige)",
           "IMAGE": "url8",
           "PRICE": "750RS"
         },
         {
-          "TITLE": "T-Shirt9",
+          "TITLE": "Crew neck t-shirt",
           "DESCRIPTION": "Crew neck t-shirt",
           "IMAGE": "url9",
           "PRICE": "800RS"
         },
         {
-          "TITLE": "T-Shirt10",
-          "DESCRIPTION": "Oversized t-shirt",
+          "TITLE": "Oversized t-shirt",
+          "DESCRIPTION": "Oversized Fit T-Shirt with Screen Print This unisex oversized t-shirt is made from 100% cotton single jersey fabric (230 GSM) and features a screen and puff print design. It includes a ribbed crewneck for added comfort and a relaxed fit. Made in Sri Lanka. For wash care, please check the label.",
           "IMAGE": "url10",
           "PRICE": "850RS"
         }
       ],
       "SHORTS": [
         {
-          "TITLE": "Short1",
-          "DESCRIPTION": "Casual denim shorts",
+          "TITLE": "Casual denim shorts",
+          "DESCRIPTION": "The Indian Garage Co Men Shorts",
           "IMAGE": "url1",
           "PRICE": "600RS"
         },
         {
-          "TITLE": "Short2",
-          "DESCRIPTION": "Cotton chino shorts",
+          "TITLE": "Cotton chino shorts",
+          "DESCRIPTION": "The Indian Garage Co Men Slim Fit Solid Mid Rise Shorts",
           "IMAGE": "url2",
           "PRICE": "700RS"
         },
         {
-          "TITLE": "Short3",
-          "DESCRIPTION": "Athletic running shorts",
+          "TITLE": "Athletic running shorts",
+          "DESCRIPTION": "Boldfit Shorts for Men Gym Half Pants for Men & Boys Training Mens Shorts Quick Dry Men Shorts for Workout & Home Wear Lightweight Gym Shorts for Men Gym Wear for Men Sports Shorts for Men",
           "IMAGE": "url3",
           "PRICE": "500RS"
         },
         {
-          "TITLE": "Short4",
-          "DESCRIPTION": "Cargo shorts",
+          "TITLE": "Cargo shorts",
+          "DESCRIPTION": "The Hemp Cargo Shorts",
           "IMAGE": "url4",
           "PRICE": "800RS"
         },
         {
-          "TITLE": "Short5",
-          "DESCRIPTION": "Beach shorts",
+          "TITLE": "Beach shorts",
+          "DESCRIPTION": "The Linen Cargo Shorts",
           "IMAGE": "url5",
           "PRICE": "450RS"
         },
         {
-          "TITLE": "Short6",
-          "DESCRIPTION": "Khaki casual shorts",
+          "TITLE": "Khaki casual shorts",
+          "DESCRIPTION": "Khaki Regular Fit Rhysley Men's Cargo Style Shorts",
           "IMAGE": "url6",
           "PRICE": "650RS"
         },
         {
-          "TITLE": "Short7",
-          "DESCRIPTION": "Relaxed fit shorts",
+          "TITLE": "Relaxed fit shorts",
+          "DESCRIPTION": "The Linen Cargo Shorts for Men - the summer must-have. Crafted from top-notch linen, they're light, breathable and perfect for the warm weather. With plenty of pockets and a range of colors, these shorts are stylish, practical, and ready for your next adventure.",
           "IMAGE": "url7",
           "PRICE": "750RS"
         },
         {
-          "TITLE": "Short8",
-          "DESCRIPTION": "Striped summer shorts",
+          "TITLE": "Striped summer shorts",
+          "DESCRIPTION": "Lars Amadeus Men Summer Striped Shorts Slim Fit Flat Front Walk Chino Seersucker Pants 34 Blue White",
           "IMAGE": "url8",
           "PRICE": "550RS"
         },
         {
-          "TITLE": "Short9",
-          "DESCRIPTION": "Sports mesh shorts",
+          "TITLE": "Sports mesh shorts",
+          "DESCRIPTION": "Evolve Mesh Shorts – White",
           "IMAGE": "url9",
           "PRICE": "700RS"
         },
         {
-          "TITLE": "Short10",
-          "DESCRIPTION": "Classic black shorts",
+          "TITLE": "Classic black shorts",
+          "DESCRIPTION": "REDX Men Shorts || Men Shorts Cotton || Men Shorts Casual || Men Cotton Chino Shorts || Bermuda (Short)",
           "IMAGE": "url10",
           "PRICE": "800RS"
         }
       ],
       "SHOES": [
         {
-          "TITLE": "Shoe1",
-          "DESCRIPTION": "Leather formal shoes",
+          "TITLE": "Leather formal shoes",
+          "DESCRIPTION": "Coffee Brown Premium Plain Oxford",
           "IMAGE": "url1",
           "PRICE": "2500RS"
         },
         {
-          "TITLE": "Shoe2",
-          "DESCRIPTION": "Casual sneakers",
+          "TITLE": "Casual sneakers",
+          "DESCRIPTION": "ASIAN Men's TARZAN-11 Casual Sneaker Shoes with Synthetic Upper Lightweight Comfortable Mid Top Sneaker Shoes for Men's & Boy's",
           "IMAGE": "url2",
           "PRICE": "2000RS"
         },
         {
-          "TITLE": "Shoe3",
-          "DESCRIPTION": "Running shoes",
+          "TITLE": "Running shoes",
+          "DESCRIPTION": "BRUTON Men Sport Shoes | Running Shoes | Casual Walking Shoes | Sneakers",
           "IMAGE": "url3",
           "PRICE": "3000RS"
         },
         {
-          "TITLE": "Shoe4",
-          "DESCRIPTION": "Canvas shoes",
+          "TITLE": "Canvas shoes",
+          "DESCRIPTION": "Neakser Men's Canvas Comfortable & Lightweight Lace-Up Sneaker (Black/White) (BLACKCAN12)",
           "IMAGE": "url4",
           "PRICE": "1800RS"
         },
         {
-          "TITLE": "Shoe5",
-          "DESCRIPTION": "Slip-on loafers",
+          "TITLE": "Slip-on loafers",
+          "DESCRIPTION": "Knoos Men's Loafer",
           "IMAGE": "url5",
           "PRICE": "2200RS"
         },
         {
-          "TITLE": "Shoe6",
-          "DESCRIPTION": "Hiking boots",
+          "TITLE": "Hiking boots",
+          "DESCRIPTION": "ASIAN Men's Everest-21 Sports Trekking & Hiking,Walking Hi-Neck Shoes with Rubber Outsole & Memory Foam Insole Lace-Up Shoes for Men's & Boy's",
           "IMAGE": "url6",
           "PRICE": "3500RS"
         },
         {
-          "TITLE": "Shoe7",
-          "DESCRIPTION": "Formal oxford shoes",
+          "TITLE": "Formal oxford shoes",
+          "DESCRIPTION": "Men's Kanor Tabaco Brown Brogue Shoes",
           "IMAGE": "url7",
           "PRICE": "4000RS"
         },
         {
-          "TITLE": "Shoe8",
-          "DESCRIPTION": "Casual sandals",
+          "TITLE": "Casual sandals",
+          "DESCRIPTION": "Hush Puppies Men's New Track Fisherman Sandals",
           "IMAGE": "url8",
           "PRICE": "1500RS"
         },
         {
-          "TITLE": "Shoe9",
-          "DESCRIPTION": "Flip-flops",
+          "TITLE": "Flip-flops",
+          "DESCRIPTION": "Hygear Men's Xpress Slipper",
           "IMAGE": "url9",
           "PRICE": "500RS"
         },
         {
-          "TITLE": "Shoe10",
-          "DESCRIPTION": "High-top sneakers",
+          "TITLE": "High-top sneakers",
+          "DESCRIPTION": "Bacca Bucci Balancer Men's Fashion Sneakers Lace-Up Trainers Basketball Style Walking Shoes",
           "IMAGE": "url10",
           "PRICE": "3200RS"
         }
