@@ -12,18 +12,12 @@ import Products from './FeaturedProducts/Products'
 function App() {
   return (
     <div >
-<Header/>
-{/* <Login/> */}
-<Banner/>
-    <Card/>
-<Products/>
-<Footer/>
-
-    {/* <Header/>
-    <Banner/>
-    <Card/>
-<Products/>
-   <Footer/> */}
+      <Header />
+      {/* <Login/> */}
+      <Banner />
+      <Card />
+      <Products />
+      <Footer />
 
     </div>
   );
