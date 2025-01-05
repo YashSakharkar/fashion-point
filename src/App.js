@@ -9,7 +9,7 @@ import Card from './Card/Card';
 import Products from './FeaturedProducts/Products'
 import ProductDataDisplay from './ProductDataDisplay/ProductDataDisplay';
 import DummySpace from './DummySpace/DummySpace';
-// import Login from './Registration/Login/Login'
+import Login from './Registration/Login/Login'
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
       <Header />
       <DummySpace />
 
-      <ProductDataDisplay />
+      {/* <ProductDataDisplay /> */}
 
 
       {/* <Banner />
@@ -25,7 +25,7 @@ function App() {
       <Products /> */}
 
 
-      {/* { <Login/>  */}
+    <Login/> 
 
       <Footer />
       {/* <ProductDataDisplay/> */}
