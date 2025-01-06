@@ -1,6 +1,9 @@
 // signup; name , email, usename, password, conform password
 
 import GoogleIcon from "@mui/icons-material/Google";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+
 import React, { useState } from "react";
 import "./Login.css";
 
@@ -9,6 +12,25 @@ const Login = () => {
   const changeform = () => {
     setLogin(!login);
   };
+
+
+
+
+
+ 
+
+
+
+    const [showPassword, setShowPassword] = useState(false);
+  
+    const togglePasswordVisibility = () => {
+      setShowPassword(!showPassword);
+    };
+
+
+
+
+
   return (
     <>
       <div className="registration-container">
@@ -25,8 +47,23 @@ const Login = () => {
               </div>
             )}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div className="input input-but">
-              <input type="email" placeholder="Email" />
+              <input type="email" placeholder="Email" required/>
             </div>
 
             {!login && (
@@ -35,19 +72,93 @@ const Login = () => {
               </div>
             )}
 
-            {!login && (
+            {/* {!login && (
               <div className="input input-but">
                 <input type="password" placeholder="Create password" />
-              </div>
-            )}
 
-            <div className="input input-but">
+                
+              </div>
+            )} */}
+
+
+
+
+            {!login && (
+
+            <div className="input input-but" style={{ position: "relative" }}>
+      <input
+        type={showPassword ? "text" : "password"}
+        placeholder={login ? "Password" : "Confirm password"}
+        style={{ paddingRight: "40px" }} // Add space for the eye button
+      />
+      <button
+        type="button"
+        onClick={togglePasswordVisibility}
+        style={{
+          position: "absolute",
+          right: "10px",
+          top: "50%",
+          transform: "translateY(-50%)",
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+        }}
+      >
+        {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+      </button>
+    </div>
+  )} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {/* <div className="input input-but">
               <input
                 type="password"
                 placeholder={login ? "Password" : "Confirm password "}
-              />
-            </div>
+              /> */}
 
+
+
+              <div className="input input-but" style={{ position: "relative" }}>
+      <input
+        type={showPassword ? "text" : "password"}
+        placeholder={login ? "Password" : "Confirm password"}
+        style={{ paddingRight: "40px" }} // Add space for the eye button
+      />
+      <button
+        type="button"
+        onClick={togglePasswordVisibility}
+        style={{
+          position:"absolute",
+          right: "10px",
+          top: "50%",
+          
+          transform: "translateY(-50%)",
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+        }}
+      >
+        {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+      </button>
+    </div>
+
+
+
+              
             <div className="forget-container under">
               {login && (
                 <a href="#" className="forget">
@@ -81,6 +192,14 @@ const Login = () => {
           </div>
         </div>
       </div>
+
+
+
+
+
+
+
+      
     </>
   );
 };
