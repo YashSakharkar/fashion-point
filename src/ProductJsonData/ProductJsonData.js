@@ -708,7 +708,7 @@ const productsJsonData=[
             },
             {
               "TITLE": "Flats",
-              "DESCRIPTION": "Kids Ville Ballerina Flats - Buy Kids Ville Ballerina Flat",
+              "DESCRIPTION": "Kids Ville Ballerina Flats  Buy Kids Ville Ballerina Flat",
               "IMAGE": "shoesurl4",
               "PRICE": "1000RS"
             },
