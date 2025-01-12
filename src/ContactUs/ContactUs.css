@@ -1,0 +1,122 @@
+.contactUs-page {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #F1F1F0;
+    /* background-color: black; */
+    margin: 0;
+
+    /* width: 100%; */
+    /* height: 100vh; */
+}
+
+.contactUs-container {
+    /* border: 1px solid red; */
+    display: flex;
+    /* justify-content: space-between; */
+    /* justify-content: center; */
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    /* margin: 40px; */
+    padding: 10px 0px;
+
+}
+
+.contactUs-container-left,
+.contactUs-container-right {
+    /* border: 1px solid green; */
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.contactUs-container-left {
+    /* border: 1px solid pink; */
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+
+
+.contactUs-container-right {
+    border: 1px solid rgb(171, 164, 164);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FAFAFA;
+    height: 500px;
+margin: 5px;
+}
+
+.contactUs-form h1,
+.contactUs-container-right h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactUs-form-data p {
+    margin-bottom: 15px;
+}
+
+.contactUs-input .contactUs-textarea
+ {
+    width: 100%;
+    padding: 20px;
+    /* font-size: 14px; */
+    font-size: medium;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.contactUs-textarea{
+    font-size: medium;
+    resize: none;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+ .contactUs-button {
+    background-color: #0078D7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+} 
+
+ .contactUs-button:hover {
+    background-color: #005BB5;
+    
+} 
+
+iframe {
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+

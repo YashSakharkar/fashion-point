@@ -11,6 +11,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 20px;
+  
+
 }
 
 /* .logo {
@@ -23,7 +25,7 @@
 } */
 
 
-.logo {
+.footer-logo {
   /* border: 2px solid red; */
   flex: 1;
   display: flex; /* Makes the container a flexbox */
@@ -33,7 +35,7 @@
   padding: 10px 0; /* Adds padding around the content */
 }
 
-.logo img {
+.footer-logo img {
   max-width: 150px; /* Increased width for the logo */
   height: auto; /* Maintains the aspect ratio */
   margin-bottom: 10px; /* Adds space below the image */
@@ -48,46 +50,47 @@
   line-height: 1.5;
 } */
 
-.links-info {
+.footer-links-info {
   display: flex;
   flex: 2;
   justify-content: space-around;
 }
 
-.usefull,
-.follow,
-.address {
+.footer-usefull,
+.footer-follow,
+.footer-address {
   flex: 1;
   padding: 10px;
   text-align: left;
 }
 
-.usefull h2,
-.follow h2,
-.address h2 {
+.footer-usefull h2,
+.footer-follow h2,
+.footer-address h2 {
   font-size: 18px;
   margin-bottom: 10px;
   color: #fff;
 }
 
-.usefull ul,
-.follow ul,
-.address ul {
+.footer-usefull ul,
+.footer-follow ul,
+.footer-address ul {
+  /* border: 1px solid red; */
   list-style: none;
   padding: 0;
 }
 
-.usefull li,
-.follow li,
-.address li {
+.footer-usefull li,
+.footer-follow li,
+.footer-address li {
   display: flex;
   align-items: center; /* Align icon and text vertically */
   margin-bottom: 10px;
 }
 
-.usefull li a,
-.follow li a,
-.address li a {
+.footer-usefull li a,
+.footer-follow li a,
+.footer-address li a {
   color: #ddd;
   text-decoration: none;
   display: flex; /* Makes the link container a flex box */
@@ -95,9 +98,9 @@
   gap: 8px; /* Adds space between icon and text */
 }
 
-.usefull li a:hover,
-.follow li a:hover,
-.address li a:hover {
+.footer-usefull li a:hover,
+.footer-follow li a:hover,
+.footer-address li a:hover {
   color: #ffcc00;
  
 }

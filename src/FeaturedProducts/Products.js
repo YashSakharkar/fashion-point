@@ -82,7 +82,16 @@ const Products = () => {
         {productData.map((data, index) => {
           return (
             <div className="items" key={index}>
+
+
+
+            <div class="image-container">
               <img src={data.image} alt={data.alt} />
+</div>
+
+
+
+
               <div className="describe">
                 <h3>{data.title}</h3>
                 <p>{truncateDescription(data.description)}</p>
