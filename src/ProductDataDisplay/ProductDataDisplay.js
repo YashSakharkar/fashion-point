@@ -7,6 +7,7 @@ const ProductDataDisplay = ({ data }) => {
     const [titlesAndDescriptions, setTitlesAndDescriptions] = useState([]);
     const [expanded, setExpanded] = useState({});
     const [categories, setCategories] = useState('')
+    console.log(data)
     var productItems = productsJsonData[0][data];
     console.log(categories)
     const result = [];
@@ -54,7 +55,7 @@ const ProductDataDisplay = ({ data }) => {
             <div className="product-display-subcontainer">
                 <div className="product-categories-container">
                     {productsJsonData.map((productsJsonDataCategories, index) => {
-                        const categories = Object.keys(productsJsonDataCategories.MENS);
+                        const categories = Object.keys(productsJsonDataCategories[data] || {});
                         return (
                             <div key={index} className="product-categoriesname">
                                 <span onClick={()=>{setCategories('')}}>All</span>
