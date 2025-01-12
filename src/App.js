@@ -1,37 +1,20 @@
-// import './App.css';
 
-
-
-import Banner from './Banner/Banner';
-import Footer from './Footer/Footer';
-import Header from './Header/Header';
-import Card from './Card/Card';
-import Products from './FeaturedProducts/Products'
-import ProductDataDisplay from './ProductDataDisplay/ProductDataDisplay';
-import DummySpace from './DummySpace/DummySpace';
-import Login from './Registration/Login/Login'
+import Footer from "./Footer/Footer";
+import Header from "./Header/Header";
+import ContentPage from "./ContentPage/ContentPage";
+import { useState } from "react";
 
 function App() {
+  const[data,setData] = useState(' ');
   return (
-    <div >
-      <Header />
-      <DummySpace />
-
-      {/* <ProductDataDisplay /> */}
-
-
-      {/* <Banner />
-      <Card />
-      <Products /> */}
-
-
-    <Login/> 
-
+    <div>
+      <Header setData={setData} />
+      <ContentPage  data={data}/>
       <Footer />
-      {/* <ProductDataDisplay/> */}
-
     </div>
   );
 }
 
 export default App;
+
+

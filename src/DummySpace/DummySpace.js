@@ -3,7 +3,8 @@ import './DummySpace.css'
 const DummySpace=()=>{
     return(
         <>
-            <div className="dummy">hello</div>
+            <div className="dummy"><p>hello</p></div>
+            
         </>
     )
 }
