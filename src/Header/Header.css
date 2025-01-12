@@ -52,7 +52,6 @@ body {
 .menu-bar li:hover {
   cursor: pointer;
   color: black;
-  border: 1px solid red;
   text-decoration: underline;
 }
 

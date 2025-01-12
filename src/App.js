@@ -6,10 +6,12 @@ import { useState } from "react";
 
 function App() {
   const[data,setData] = useState(' ');
+  const[visibility,setvisibility]=useState(false)
+  console.log(visibility)
   return (
     <div>
-      <Header setData={setData} />
-      <ContentPage  data={data}/>
+      <Header setData={setData}  setvisibility={setvisibility}/>
+      <ContentPage  data={data} visibility={visibility}/>
       <Footer />
     </div>
   );
