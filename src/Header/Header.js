@@ -12,37 +12,78 @@ const Header = ({ setData }) => {
     setSelectedLanguage(language);
   };
 
+  const [selected, setSelected] = useState("HOME");
+
   return (
     <div className="header">
       <div className="container">
         <nav className="header-menu">
           <ul className="menu-bar">
-            <li>HOME</li>
             <li
-              onClick={(e) => {
-                e.preventDefault();
-                setPerson("MENS");
+              onClick={() => {
+                setPerson("HOME");
+                setSelected("HOME");
               }}
+              className={
+                selected === "HOME"
+                  ? "selected-menu"
+                  : "Unselected-selected-menu"
+              }
+            >
+              HOME
+            </li>
+            <li
+              onClick={() => {
+                setPerson("MENS");
+                setSelected("MENS");
+              }}
+              className={
+                selected === "MENS"
+                  ? "selected-menu"
+                  : "Unselected-selected-menu"
+              }
             >
               MENS
             </li>
+
             <li
-              onClick={(e) => {
-                e.preventDefault();
+              onClick={() => {
                 setPerson("WOMENS");
+                setSelected("WOMENS");
               }}
+              className={
+                selected === "WOMENS"
+                  ? "selected-menu"
+                  : "Unselected-selected-menu"
+              }
             >
               WOMENS
             </li>
+
             <li
-              onClick={(e) => {
-                e.preventDefault();
+              onClick={() => {
                 setPerson("KIDS");
+                setSelected("KIDS");
               }}
+              className={
+                selected === "KIDS"
+                  ? "selected-menu"
+                  : "Unselected-selected-menu"
+              }
             >
               KIDS
             </li>
-            <li>ACCESORIES</li>
+            <li
+            onClick={() => {
+                setPerson("ACCESORIES");
+                setSelected("ACCESORIES");
+              }}
+              className={
+                selected === "ACCESORIES"
+                  ? "selected-menu"
+                  : "Unselected-selected-menu"
+              }
+            >ACCESORIES</li>
           </ul>
         </nav>
         <div className="logo-img">
