@@ -6,17 +6,14 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 const Header = ({ setData, setvisibility }) => {
   const [visible, setVisisble] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("");
-  const [person, setPerson] = useState('');
+  const [person, setPerson] = useState("");
   // onst [productVisibility, setProductVisibility] = useState(false);
-  if (person === 'HOME' || person === '') {
-    setvisibility(false)
-  }
-  else {
-    setvisibility(true)
+  if (person === "HOME" || person === "") {
+    setvisibility(false);
+  } else {
+    setvisibility(true);
     setData(person);
   }
-
-
 
   const handleLanguageClick = (language) => {
     setSelectedLanguage(language);
@@ -29,10 +26,21 @@ const Header = ({ setData, setvisibility }) => {
       <div className="container">
         <nav className="header-menu">
           <ul className="menu-bar">
-            <li onClick={() => { setPerson("HOME") }}>HOME</li>
             <li
-              onClick={(e) => {
-                e.preventDefault();
+              onClick={() => {
+                setPerson("HOME");
+                setSelected("HOME");
+              }}
+              className={
+                selected === "HOME"
+                  ? "selected-menu"
+                  : "Unselected-selected-menu"
+              }
+            >
+              HOME
+            </li>
+            <li
+              onClick={() => {
                 setPerson("MENS");
                 setSelected("MENS");
               }}
@@ -73,7 +81,7 @@ const Header = ({ setData, setvisibility }) => {
               KIDS
             </li>
             <li
-            onClick={() => {
+              onClick={() => {
                 setPerson("ACCESORIES");
                 setSelected("ACCESORIES");
               }}
@@ -82,7 +90,9 @@ const Header = ({ setData, setvisibility }) => {
                   ? "selected-menu"
                   : "Unselected-selected-menu"
               }
-            >ACCESORIES</li>
+            >
+              ACCESORIES
+            </li>
           </ul>
         </nav>
         <div className="logo-img">
