@@ -1,29 +1,127 @@
+
+
 /* body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     line-height: 1.6;
   } */
-.product-display-container {
+  /* .product-display-container {
+
     padding: 5px 20px 5px 20px;
-    border: 1px solid black;
+    border: 10px solid black;
+
+
+    
+
+    
+} */
+
+/* /***************** */
+.product-display-container {
+    /* padding: 5px 20px 5px 20px; */
+    padding: 40px;
+    /* border: 10px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    margin: 0; 
+    background-color: #f8f9fa; 
+    
 }
 
 .product-display-subcontainer {
-    background-color: 6c757d;
+    /* border: 3px solid red; */
+    background-color: white;
     padding: 40px 20px;
-}
+    margin: 10px;
+    height: auto; 
+    width: 90%; 
+    max-width: 1500px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+    overflow: auto; 
 
+   
+
+}
+/* ******************* */
+
+
+/* .product-display-subcontainer {
+border:3px solid red;
+
+    /* background-color: 6c757d; 
+    background-color: white;
+    padding: 40px 20px;
+    margin: 10px;
+    height: 100vh;
+
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+
+
+} */
+
+
+/* 
 .product-categoriesname span {
-    border: 1px solid whitesmoke;
-    padding: 15px 50px 15px 50px;
+    /* border:1px solid red; */
+
+    /* border: 1px solid whitesmoke;  *
+    padding: 12px 40px 12px 40px;
     background-color: whitesmoke;
     border-radius: 10px;
     margin: 20px;
     box-shadow: 8px 3px 8px rgba(42, 42, 42, 0.9);
+} */
+
+.product-categoriesname span {
+    
+    padding: 12px 40px; 
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin: 20px; 
+    box-shadow: 8px 3px 8px rgba(42, 42, 42, 0.9);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.product-categoriesname span:hover {
+    transform: scale(1.05); 
+    box-shadow: 6px 6px 12px rgba(42, 42, 42, 0.3); 
+    background-color: #f0f0f0; 
+}
+
+
+.read-more-btn {
+    color: blue;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 0.9em;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.desc{
+    /* border: 1px solid red; */
+    text-transform: capitalize;
+}
+
+
+
+ /* .product-categoriesname{
+    border:2px solid blue ;
+} */
+/*
+.product-categories-container{
+    border: 2px solid black;
+} */
+
 .product-display-page-container {
+    /* border: 2px solid red; */
     margin-top: 50px;
     display: flex;
+    position: relative;
     align-items: center;
     background-color: white;
     padding: 10px 20px;
@@ -31,42 +129,65 @@
 }
 
 .filter-container {
-    border: 1px solid whitesmoke;
+    /* border: 1px solid whitesmoke; */
+    border: 1px solid #c5c6d0;
+
     width: 25%;
     padding: 15px 20px 15px 20px;
     border-radius: 10px;
     box-shadow: 5px 1px 6px rgba(42, 42, 42, 0.9);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------- */
 .search-product {
     border: 1px solid rgb(25, 24, 24);
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    width: auto;
+    justify-content: space-between; 
+    width: 100%; 
+    max-width: 400px; 
     height: auto;
     border-radius: 10px;
-    border: 1px solid gray;
-    padding: 5px 5px 5px 15px;
-
+    padding: 5px 10px; 
+    box-sizing: border-box; 
 }
 
 .search-product input {
-    color: lightgray;
     all: unset;
-    text-align: center;
+    color: black;
+    text-align: left; 
     outline: none;
     border: none;
     font-weight: bolder;
-    font-size: 100%;
-    padding: 10px 20px;
-    margin-right: 50px;
+    font-size: 16px; 
+    padding: 5px 10px; 
     height: 30px;
+    flex-grow: 1; 
+    margin: 0; 
+    box-sizing: border-box;
 }
 
 .search-products-container {
+    /* border: 2px solid red; */
     padding-top: 10px;
 }
+/* --------------- */
+
 
 /* .product-display-page{
     border:1px solid whitesmoke;
@@ -79,66 +200,78 @@
     width: 330px;
     height: 450px;
 } */
-.product-display-page {
+
+
+
+
+
+
+  .product-display-page {
     border: 1px solid whitesmoke;
-    width: 75%;
+    /* border: 2px solid red; */
+    width: 100%;
     height: 480px;
-    padding: 15px 2px;
-    border-radius: 10px;
+    padding: 15px 15px;
+    border-radius: 10px 5px 5px 10px;
     box-shadow: 5px 1px 6px rgba(42, 42, 42, 0.9);
     overflow-y: scroll;
     overflow-x: hidden;
-    scrollbar-width: none;
-    /* -ms-overflow-style: none; */
+  
+} 
+.product-display-page {
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #888 #f5f5f5; /* Thumb color and track color for Firefox */
+ cursor:pointer;
 }
 
+
+
 .products-images {
-    display: flex;
-    flex-wrap: wrap;
+    /* border: 2px solid green; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    
     gap: 20px;
     justify-content: center;
-
+    width: 100%;
 }
 
 .products-images img {
-    width: 250px;
+    /* border: 2px solid gray; */
+    width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: cover; 
     border-radius: 5px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-
+    /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); */
 }
 
 .product-images-content {
+    border: 1px solid gainsboro;
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
-    border: 1px solid whitesmoke;
     align-items: center;
     padding: 5px;
     background-color: whitesmoke;
     border-radius: 10px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); */
+    max-width: 300px;
 }
 
 .product-images-content span {
+    font-family:𝚈𝚘𝚞𝚛 𝙽𝚊𝚖𝚎 ;
+    /* border: 1px solid red; */
+    border-radius: 5px;
     width: 100%;
-    /* Ensure it adapts to the parent container */
-    max-width: 330px;
-    /* Set a maximum width to constrain the text */
+    max-width: 300px; 
     word-wrap: break-word;
-    /* Enable line breaks for long words */
     overflow-wrap: break-word;
-    /* Modern equivalent for word wrapping */
     word-break: break-word;
-    /* Break words at any point, including hyphens */
     white-space: normal;
-    /* Allow text to wrap naturally */
     font-size: 16px;
-    /* Adjust font size as needed */
     line-height: 1.4;
-    /* Improve readability with proper line spacing */
     color: #333;
     hyphens: auto;
-    padding-left: 18px;
+    padding-left: 5px;
 
 }
