@@ -12,7 +12,7 @@ const CardSecond = () => {
           <div className="container-right">
             <div className="container-right-data">
               <h1>Classic winter collection</h1>
-              {/* <p>
+              <p>
                 Stay warm and stylish this winter with our Classic Winter
                 Collection. Featuring cozy sweaters, elegant coats, soft
                 scarves, and snug boots, this collection is perfect for the
@@ -23,7 +23,7 @@ const CardSecond = () => {
                 <p className="explore">
                   Explore the collection and enjoy winter in style!{" "}
                 </p>
-              </p> */}
+              </p>
               <button>Shop Collection</button>
             </div>
           </div>
