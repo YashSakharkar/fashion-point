@@ -47,7 +47,7 @@ const ProductDataDisplay = () => {
                 })
             }
         }
-         setTitlesAndDescriptions(result)
+        setTitlesAndDescriptions(result)
         //  console.log(titlesAndDescriptions)
     }, [titlesAndDescriptions]);
     return (
