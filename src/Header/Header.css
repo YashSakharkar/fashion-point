@@ -58,7 +58,7 @@ body {
 
 
 .selected-menu {
-  color: red;
+  color: whitesmoke;
   font-weight: bolder;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);

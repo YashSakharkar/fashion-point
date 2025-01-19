@@ -1,5 +1,5 @@
 .contactUs-page {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,7 +13,7 @@
 }
 
 .contactUs-container {
-    /* border: 1px solid red; */
+    border: 1px solid red;
     display: flex;
     /* justify-content: space-between; */
     /* justify-content: center; */
@@ -31,7 +31,7 @@
 
 .contactUs-container-left,
 .contactUs-container-right {
-    /* border: 1px solid green; */
+    border: 1px solid green;
     width: 50%;
     padding: 20px;
     box-sizing: border-box;
@@ -39,12 +39,12 @@
 
 
 .contactUs-container-left {
-    /* border: 1px solid pink; */
+    border: 1px solid pink;
     display: flex;
     flex-direction: column;
     width: 30%;
-    /* justify-content: center; */
-    /* align-items: center; */
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -63,6 +63,7 @@ margin: 5px;
 
 .contactUs-form h1,
 .contactUs-container-right h2 {
+/* border: 1px solid red; */
     margin-bottom: 20px;
     font-size: 30px;
     color: #333;

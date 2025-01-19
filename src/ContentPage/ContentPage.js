@@ -1,35 +1,32 @@
 import React, { useEffect, useState } from "react";
 import LandingPage from "../LandingPage/LandingPage";
 import ProductDataDisplay from "../ProductDataDisplay/ProductDataDisplay";
-const ContentPage = ({ data,visibility }) => {
-  const [bannerPageVisisbility, setBannerDisplayPageVisisbility] = useState(true)
-  const [productDisplayPageVisisbility, setProductDisplayPageVisisbility] = useState(false)
+import Loader from "../Loader/Loader";
+const ContentPage = ({ data, visibility }) => {
+  const [bannerPageVisisbility, setBannerDisplayPageVisisbility] =
+    useState(true);
+  const [productDisplayPageVisisbility, setProductDisplayPageVisisbility] =
+    useState(false);
+  const [loader, setLoader] = useState(false);
   useEffect(() => {
-   if(visibility){
-       setProductDisplayPageVisisbility(true)
-    setBannerDisplayPageVisisbility(false)
-   }
-   else{
-    setProductDisplayPageVisisbility(false)
-    setBannerDisplayPageVisisbility(true)
-   }
-  }, [visibility])
+    if (visibility) {
+        setLoader(true)
+        setTimeout(()=>{
+        setLoader(false)
+        setProductDisplayPageVisisbility(true);
+        },3000)
+      setBannerDisplayPageVisisbility(false);
+    } else {
+      setProductDisplayPageVisisbility(false);
+      setBannerDisplayPageVisisbility(true);
+    }
+  }, [visibility]);
   return (
     <div>
-      {
-        bannerPageVisisbility && (
-          <LandingPage />
-        )
-      }
+      {bannerPageVisisbility && <LandingPage />}
 
-      {
-        productDisplayPageVisisbility && (
-          <ProductDataDisplay data={data} />
-        )
-      }
-
-
-
+      {productDisplayPageVisisbility && <ProductDataDisplay data={data} />}
+      {loader && <Loader />}
     </div>
   );
 };
