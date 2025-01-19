@@ -7,22 +7,39 @@ const ProductDataDisplay = ({ data }) => {
     const [titlesAndDescriptions, setTitlesAndDescriptions] = useState([]);
     const [expanded, setExpanded] = useState({});
     const [categories, setCategories] = useState('')
-    console.log(data)
+    const [serachedProduct, setSerachedProduct] = useState('')
+    const [originalProducts, setOriginalProducts] = useState([]);
+    const priceRanges = [
+        { label: "500 - 700", value: [500, 700] },
+        { label: "700 - 900", value: [700, 900] },
+        { label: "900 - 1300", value: [900, 1300] },
+        { label: "Above 1300", value: [1300, Infinity] },
+    ];
+    const filterColors = [
+        { label: "Red" },
+        { label: "White" },
+        { label: "Blue" },
+        { label: "Black" },
+        { label: "Yellow" },
+        { label: "Green" },
+    ];
     var productItems = productsJsonData[0][data];
-    console.log(categories)
-    const result = [];
     useEffect(() => {
+        var result = [];
+        const uniqueCheck = new Set();
         if (categories) {
             for (const products in productItems) {
-                console.log(productItems[categories])
                 for (const product2 in productItems[categories]) {
+                    if (!uniqueCheck.has(productItems[categories][product2].TITLE)) {
+                        uniqueCheck.add(productItems[categories][product2].TITLE);
+                        result.push({
+                            title: productItems[categories][product2].TITLE,
+                            description: productItems[categories][product2].DESCRIPTION,
+                            image: productItems[categories][product2].IMAGE,
+                            price: productItems[categories][product2].PRICE,
+                        });
 
-                    result.push({
-                        title: productItems[categories][product2].TITLE,
-                        description: productItems[categories][product2].DESCRIPTION,
-                        image: productItems[categories][product2].IMAGE,
-                        price: productItems[categories][product2].PRICE,
-                    });
+                    }
                 }
             }
         }
@@ -41,7 +58,9 @@ const ProductDataDisplay = ({ data }) => {
         }
 
         setTitlesAndDescriptions(result);
-    }, [productItems, categories]);
+        setOriginalProducts(result)
+
+    }, [productItems, categories, serachedProduct]);
 
     const toggleReadMore = (index) => {
         setExpanded((prevState) => ({
@@ -49,6 +68,35 @@ const ProductDataDisplay = ({ data }) => {
             [index]: !prevState[index],
         }));
     };
+
+    const HandleSearchProduct = () => {
+        const searchResult = originalProducts.filter((filteredproducts) =>
+            filteredproducts.title.toLowerCase().includes(serachedProduct) ||
+            filteredproducts.description.toLowerCase().includes(serachedProduct)
+        );
+        setTitlesAndDescriptions(searchResult)
+    };
+    const handleCheckBoxes = (value) => {
+        const products = originalProducts.filter((filetprice) => {
+            const numericPrice = Number(filetprice.price.replace("RS", "").trim());
+            if (value[1] === Infinity) {
+                return numericPrice > 1300
+            }
+            return numericPrice <= value[1] && numericPrice > value[0];
+        });
+
+        setTitlesAndDescriptions(products)
+    };
+
+
+    const handleCheckboxColor = (color) => {
+        const filterColor = originalProducts.filter((colorfilter) =>
+            colorfilter.title.toLowerCase().includes(color.label.toLowerCase()) ||
+            colorfilter.description.toLowerCase().includes(color.label.toLowerCase())
+        )
+        setTitlesAndDescriptions(filterColor)
+    }
+
 
     return (
         <div className="product-display-container">
@@ -58,9 +106,11 @@ const ProductDataDisplay = ({ data }) => {
                         const categories = Object.keys(productsJsonDataCategories[data] || {});
                         return (
                             <div key={index} className="product-categoriesname">
-                                <span onClick={()=>{setCategories('')}}>All</span>
+                                <span onClick={() => { setCategories('') }}>All</span>
                                 {categories.map((Category, categoryIndex) => (
-                                    <span key={categoryIndex} onClick={() => { setCategories(Category) }}>{Category}</span>
+                                    <span key={categoryIndex} onClick={() => {
+                                        setCategories(Category)
+                                    }}>{Category}</span>
                                 ))}
                             </div>
                         );
@@ -74,42 +124,40 @@ const ProductDataDisplay = ({ data }) => {
                         </div>
                         <div className="search-products-container">
                             <div className="search-product">
-                                <input type="text" placeholder="Search For the Products" />
-                                <SearchIcon sx={{ color: "gray" }} />
+                                <input type="text" placeholder="Search For the Products" onChange={(e) => {
+                                    setSerachedProduct(e.target.value.toLowerCase())
+                                }} />
+                                <SearchIcon sx={{ color: "gray", cursor: "pointer" }} onClick={() => { HandleSearchProduct(serachedProduct) }} />
                                 <br />
                             </div>
                             <br />
                             <span>Filter By Price</span>
                             <br />
-                            <input type="checkbox" name="price" value="Less Than 100" /> Less
-                            Than 100
-                            <br />
-                            <input type="checkbox" name="price" value="100-200" /> 100-200
-                            <br />
-                            <input type="checkbox" name="price" value="200-500" /> 200-500
-                            <br />
-                            <input type="checkbox" name="price" value="500-1000" /> 500-1000
-                            <br />
-                            <input type="checkbox" name="price" value="more than 1000" /> More
-                            than 1000
+                            {priceRanges.map((range) => (
+                                <div>
+                                    <input type="radio" value={`${range.value[0]}-${range.value[1]}`} name="pricecheckbox" onClick={() => { handleCheckBoxes(range.value) }} /><span> {range.label}</span>
+                                    <br />
+                                </div>
+
+                            ))
+                            }
                             <br />
                             <hr />
                             <span>Filter By Color</span>
                             <br />
-                            <input type="checkbox" name="price" value="red" /> Red
-                            <br />
-                            <input type="checkbox" name="price" value="blue" /> Blue
-                            <br />
-                            <input type="checkbox" name="price" value="Green" /> Green
-                            <br />
-                            <input type="checkbox" name="price" value="Black" /> Black
-                            <br />
-                            <input type="checkbox" name="price" value="Yellow" /> Yellow
-                            <br />
+                            {filterColors.map((colors) => (
+                                <div>
+                                    <input type="radio" name="price" value={colors.label} onClick={() => { handleCheckboxColor(colors) }} /> <span>{colors.label}</span>
+                                    <br />
+                                </div>
+                            ))
+                            }
+
                         </div>
                     </div>
                     <div className="product-display-page">
                         <div className="products-images">
+
                             {titlesAndDescriptions.map((result, index) => {
                                 const isLongDescription = result.description.length > 12;
                                 const displayedDescription = expanded[index]
@@ -136,8 +184,11 @@ const ProductDataDisplay = ({ data }) => {
                                     </div>
                                 );
                             })}
+
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </div>
