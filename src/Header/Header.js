@@ -3,12 +3,13 @@ import "./Header.css";
 import Face6Icon from "@mui/icons-material/Face6";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import Loader from "../Loader/Loader";
-const Header = ({ setData, setvisibility }) => {
+const Header = ({ setData, setvisibility,setSHowLogin }) => {
   const [visible, setVisisble] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [person, setPerson] = useState("");
   const [Loader, setLoader] = useState(false);
+  const [showLoginss, setSHowLoginss] = useState(false);
+
   if (person === "HOME" || person === "") {
     setvisibility(false);
   } else {
@@ -21,6 +22,7 @@ const Header = ({ setData, setvisibility }) => {
   };
 
   const [selected, setSelected] = useState("HOME");
+  setSHowLogin(showLoginss)
 
   return (
     <>
@@ -32,6 +34,7 @@ const Header = ({ setData, setvisibility }) => {
                 onClick={() => {
                   setPerson("HOME");
                   setSelected("HOME");
+                  setSHowLoginss(false)
                 }}
                 className={
                   selected === "HOME"
@@ -45,6 +48,7 @@ const Header = ({ setData, setvisibility }) => {
                 onClick={() => {
                   setPerson("MENS");
                   setSelected("MENS");
+                  setSHowLoginss(false)
                 }}
                 className={
                   selected === "MENS"
@@ -59,6 +63,7 @@ const Header = ({ setData, setvisibility }) => {
                 onClick={() => {
                   setPerson("WOMENS");
                   setSelected("WOMENS");
+                  setSHowLoginss(false)
                 }}
                 className={
                   selected === "WOMENS"
@@ -73,6 +78,7 @@ const Header = ({ setData, setvisibility }) => {
                 onClick={() => {
                   setPerson("KIDS");
                   setSelected("KIDS");
+                  setSHowLoginss(false)
                 }}
                 className={
                   selected === "KIDS"
@@ -86,6 +92,7 @@ const Header = ({ setData, setvisibility }) => {
                 onClick={() => {
                   setPerson("ACCESORIES");
                   setSelected("ACCESORIES");
+                  setSHowLoginss(false)
                 }}
                 className={
                   selected === "ACCESORIES"
@@ -112,8 +119,16 @@ const Header = ({ setData, setvisibility }) => {
                 }}
               >
                 <img src="./Flag_of_India.svg.webp" alt="indian-flag-img" />
-                <span>
-                  {" "}
+                <span    onClick={() => {
+                  setSelected("English");
+                 setSHowLoginss(false)
+                }}
+                className={
+                  selected === "English"
+                    ? "selected-menu"
+                    : "Unselected-selected-menu"
+                }>
+                 
                   {selectedLanguage ? selectedLanguage : <span>English</span>}
                 </span>
                 <KeyboardArrowDownIcon />
@@ -135,11 +150,39 @@ const Header = ({ setData, setvisibility }) => {
                   </ul>
                 )}
               </li>
-              <li>Returns & Orders</li>
-              <li>
-                <Face6Icon sx={{ color: "aqua", fontSize: 30 }} />
+              <li  onClick={() => {
+                  setSelected("Return");
+                 setSHowLoginss(false)
+                }}
+                className={
+                  selected === "Return"
+                    ? "selected-menu"
+                    : "Unselected-selected-menu"
+                }>Returns & Orders</li>
+              <li  onClick={() => {
+                  setSelected("profile");
+                }}
+                className={
+                  selected === "profile"
+                    ? "selected-menu"
+                    : "Unselected-selected-menu"
+                }>
+                <Face6Icon sx={{ color: "aqua", fontSize: 30 }} onClick={()=>{
+                  setSHowLoginss(true)
+                  // setVisisble(false)
+                  setvisibility(false)
+              
+                  }} />
               </li>
-              <li>
+              <li  onClick={() => {
+                  setSelected("shoppingicon");
+                 setSHowLoginss(false)
+                }}
+                className={
+                  selected === "shoppingicon"
+                    ? "selected-menu"
+                    : "Unselected-selected-menu"
+                }>
                 <ShoppingCartIcon sx={{ color: "aqua", fontSize: 30 }} />
                 <sup>2</sup>
               </li>
@@ -147,7 +190,6 @@ const Header = ({ setData, setvisibility }) => {
           </nav>
         </div>
       </div>
-      
     </>
   );
 };
