@@ -4,6 +4,7 @@ import Face6Icon from "@mui/icons-material/Face6";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 const Header = ({ setData, setvisibility,setSHowLogin }) => {
+  
   const [visible, setVisisble] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [person, setPerson] = useState("");

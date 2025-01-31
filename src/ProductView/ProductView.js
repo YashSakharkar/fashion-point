@@ -1,16 +1,21 @@
-import React, { use, useState } from "react";
+import React, { useState } from "react";
 import "./ProductView.css";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CloseIcon from "@mui/icons-material/Close";
 
-const ProductView = ({dispalayProduct}) => {
+const ProductView = ({ dispalayProduct }) => {
   const [zoomedImg, setZoomedImg] = useState(false);
   const [zoomedProductView, setZoomedProductView] = useState(true);
+  const quantity = [];
+  for (let i = 1; i <= 100; i++) {
+    quantity.push(i)
+  }
+  console.log(quantity)
   const HandleZoomedImage = () => {
     setZoomedImg(true);
     setZoomedProductView(false)
-    console.log(dispalayProduct)
+    //console.log(dispalayProduct)
   };
   return (
     <div className="ProductView">
@@ -28,11 +33,20 @@ const ProductView = ({dispalayProduct}) => {
               {/* <p className="ProductView-category">SPORTS SHOES</p> */}
               <h2 className="ProductView-product-name">{dispalayProduct.title}</h2>
               <p className="ProductView-product-description">
-            {dispalayProduct.description}
+                {dispalayProduct.description}
               </p>
 
               <div className="ProductView-pricing">
                 <span className="ProductView-price">&#8377;{dispalayProduct.price}</span>
+                <span style={{ paddingLeft: 5 }}><b>Quantity :</b></span>
+                {/* <span className="ProductView-price">&#8377;{dispalayProduct.price}</span> */}
+                <select className="quantity-bar">
+                  {
+                    quantity.map((quantities) => (
+                      <option value={quantities} key={quantities}><b>{quantities}</b></option>
+                    ))
+                  }
+                </select>
                 <span className="ProductView-original-price">
                   {/* <strike>&#8377;2300</strike> */}
                 </span>
@@ -62,10 +76,10 @@ const ProductView = ({dispalayProduct}) => {
           <div className="ProductView-container-down">
             <div className="ProductView-contain-down">
               <div>
-                <CloseIcon onClick={()=>{
+                <CloseIcon onClick={() => {
                   setZoomedImg(false)
                   setZoomedProductView(true)
-                  }}/>
+                }} />
               </div>
               <img
                 src={dispalayProduct.image}
