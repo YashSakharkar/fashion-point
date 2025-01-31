@@ -1,15 +1,21 @@
-import React, { use, useState } from "react";
+import React, { useState } from "react";
 import "./ProductView.css";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CloseIcon from "@mui/icons-material/Close";
 
-const ProductView = () => {
+const ProductView = ({ dispalayProduct }) => {
   const [zoomedImg, setZoomedImg] = useState(false);
   const [zoomedProductView, setZoomedProductView] = useState(true);
+  const quantity = [];
+  for (let i = 1; i <= 100; i++) {
+    quantity.push(i)
+  }
+  console.log(quantity)
   const HandleZoomedImage = () => {
     setZoomedImg(true);
     setZoomedProductView(false)
+    //console.log(dispalayProduct)
   };
   return (
     <div className="ProductView">
@@ -18,24 +24,31 @@ const ProductView = () => {
           <div className="ProductView-container">
             <div className="ProductView-container-left">
               <img
-                src="/images/CardSecondImg/shoe_image.png"
-                alt="Nike Red Shoes"
+                src={dispalayProduct.image}
+                alt={dispalayProduct.title}
                 onClick={HandleZoomedImage}
               />
             </div>
             <div className="ProductView-container-right">
-              <p className="ProductView-category">SPORTS SHOES</p>
-              <h2 className="ProductView-product-name">Nike Red Shoes</h2>
+              {/* <p className="ProductView-category">SPORTS SHOES</p> */}
+              <h2 className="ProductView-product-name">{dispalayProduct.title}</h2>
               <p className="ProductView-product-description">
-                These Nike Red Shoes are designed for comfort and style. Perfect
-                for sports and casual wear, they combine durability with
-                elegance.
+                {dispalayProduct.description}
               </p>
 
               <div className="ProductView-pricing">
-                <span className="ProductView-price">&#8377;1499</span>
+                <span className="ProductView-price">&#8377;{dispalayProduct.price}</span>
+                <span style={{ paddingLeft: 5 }}><b>Quantity :</b></span>
+                {/* <span className="ProductView-price">&#8377;{dispalayProduct.price}</span> */}
+                <select className="quantity-bar">
+                  {
+                    quantity.map((quantities) => (
+                      <option value={quantities} key={quantities}><b>{quantities}</b></option>
+                    ))
+                  }
+                </select>
                 <span className="ProductView-original-price">
-                  <strike>&#8377;2300</strike>
+                  {/* <strike>&#8377;2300</strike> */}
                 </span>
               </div>
 
@@ -63,14 +76,14 @@ const ProductView = () => {
           <div className="ProductView-container-down">
             <div className="ProductView-contain-down">
               <div>
-                <CloseIcon onClick={()=>{
+                <CloseIcon onClick={() => {
                   setZoomedImg(false)
                   setZoomedProductView(true)
-                  }}/>
+                }} />
               </div>
               <img
-                src="/images/CardSecondImg/shoe_image.png"
-                alt="Nike Red Shoes"
+                src={dispalayProduct.image}
+                alt={dispalayProduct.title}
               />
             </div>
           </div>

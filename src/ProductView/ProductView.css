@@ -249,7 +249,10 @@ color: red;
   
 }
 
-
+.ProductView-pricing select{
+  width: 60px;
+  text-align: center;
+}
 
 
 

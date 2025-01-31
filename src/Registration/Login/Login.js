@@ -1,4 +1,3 @@
-// signup; name , email, usename, password, conform password
 
 import GoogleIcon from "@mui/icons-material/Google";
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -12,31 +11,16 @@ const Login = () => {
   const changeform = () => {
     setLogin(!login);
   };
+  const [showPassword, setShowPassword] = useState(false);
 
-
-
-
-
- 
-
-
-
-    const [showPassword, setShowPassword] = useState(false);
-  
-    const togglePasswordVisibility = () => {
-      setShowPassword(!showPassword);
-    };
-
-
-
-
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   return (
     <>
       <div className="registration-container">
-        <div className={`form-container ${login ? "login" : "signup"}`}>
-          {/* <h1> {login ? "Login" : "Signup"} </h1> */}
-          
+        <div className={`form-container ${login ? " login" : " signup"}`}>
 
           <h1>{login ? <img src="./avatar.png" alt="avatar" className="avatar" /> : "Signup"}</h1>
 
@@ -46,24 +30,8 @@ const Login = () => {
                 <input type="text" placeholder="Enter your name..." />
               </div>
             )}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <div className="input input-but">
-              <input type="email" placeholder="Email" required/>
+              <input type="email" placeholder="Email" required />
             </div>
 
             {!login && (
@@ -71,94 +39,54 @@ const Login = () => {
                 <input type="text" placeholder="Enter your username..." />
               </div>
             )}
-
-            {/* {!login && (
-              <div className="input input-but">
-                <input type="password" placeholder="Create password" />
-
-                
-              </div>
-            )} */}
-
-
-
-
             {!login && (
 
-            <div className="input input-but" style={{ position: "relative" }}>
-      <input
-        type={showPassword ? "text" : "password"}
-        placeholder={login ? "Password" : "Confirm password"}
-        style={{ paddingRight: "40px" }} // Add space for the eye button
-      />
-      <button
-        type="button"
-        onClick={togglePasswordVisibility}
-        style={{
-          position: "absolute",
-          right: "10px",
-          top: "50%",
-          transform: "translateY(-50%)",
-          background: "none",
-          border: "none",
-          cursor: "pointer",
-        }}
-      >
-        {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
-      </button>
-    </div>
-  )} 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            {/* <div className="input input-but">
-              <input
-                type="password"
-                placeholder={login ? "Password" : "Confirm password "}
-              /> */}
-
-
-
               <div className="input input-but" style={{ position: "relative" }}>
-      <input
-        type={showPassword ? "text" : "password"}
-        placeholder={login ? "Password" : "Confirm password"}
-        style={{ paddingRight: "40px" }} // Add space for the eye button
-      />
-      <button
-        type="button"
-        onClick={togglePasswordVisibility}
-        style={{
-          position:"absolute",
-          right: "10px",
-          top: "50%",
-          
-          transform: "translateY(-50%)",
-          background: "none",
-          border: "none",
-          cursor: "pointer",
-        }}
-      >
-        {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
-      </button>
-    </div>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder={login ? "Password" : " Password"}
+                  style={{ paddingRight: "40px" }} // Add space for the eye button
+                />
+                <button
+                  type="button"
+                  onClick={togglePasswordVisibility}
+                  style={{
+                    position: "absolute",
+                    right: "10px",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                  }}
+                >
+                  {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                </button>
+              </div>
+            )}
+            <div className="input input-but" style={{ position: "relative" }}>
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder={login ? "Password" : "Confirm password"}
+                style={{ paddingRight: "40px" }} // Add space for the eye button
+              />
+              <button
+                type="button"
+                onClick={togglePasswordVisibility}
+                style={{
+                  position: "absolute",
+                  right: "10px",
+                  top: "50%",
 
-
-
-              
+                  transform: "translateY(-50%)",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+              >
+                {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+              </button>
+            </div>
             <div className="forget-container under">
               {login && (
                 <a href="#" className="forget">
@@ -174,8 +102,8 @@ const Login = () => {
 
           <div className="dont">
             {login ? "Don't have an account? " : "Already have an account? "}
-            <span onClick={changeform} className="hand under">
-              {login ? " Signup" : "Login"}
+            <span onClick={changeform} className="hand under" >
+              {login ? "Signup" : "  Login"}
             </span>
           </div>
 
@@ -192,14 +120,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-
-
-
-
-
-
-
-      
     </>
   );
 };

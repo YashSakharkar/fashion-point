@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import productsJsonData from "./ProductJsonData";
 import "./ProductDisplay.css";
 import SearchIcon from "@mui/icons-material/Search";
+import ProductView from "../ProductView/ProductView";
 
 const ProductDataDisplay = ({ data }) => {
     const [titlesAndDescriptions, setTitlesAndDescriptions] = useState([]);
@@ -9,6 +10,9 @@ const ProductDataDisplay = ({ data }) => {
     const [categories, setCategories] = useState('')
     const [serachedProduct, setSerachedProduct] = useState('')
     const [originalProducts, setOriginalProducts] = useState([]);
+    const [dispalayProduct, setDisplayProducts] = useState([]);
+    const [productListingPage, setProductListingPage] = useState(true);
+    const [productDisplayPage, setProductDissplayPage] = useState(false);
     const priceRanges = [
         { label: "500 - 700", value: [500, 700] },
         { label: "700 - 900", value: [700, 900] },
@@ -96,102 +100,115 @@ const ProductDataDisplay = ({ data }) => {
         )
         setTitlesAndDescriptions(filterColor)
     }
+    const HandleDisplayProducts = (result) => {
+        setDisplayProducts(result)
+        setProductListingPage(false)
+        setProductDissplayPage(true)
+    }
 
 
-    return (
-        <div className="product-display-container">
-            <div className="product-display-subcontainer">
-                <div className="product-categories-container">
-                    {productsJsonData.map((productsJsonDataCategories, index) => {
-                        const categories = Object.keys(productsJsonDataCategories[data] || {});
-                        return (
-                            <div key={index} className="product-categoriesname">
-                                <span onClick={() => { setCategories('') }}>All</span>
-                                {categories.map((Category, categoryIndex) => (
-                                    <span key={categoryIndex} onClick={() => {
-                                        setCategories(Category)
-                                    }}>{Category}</span>
-                                ))}
+    return (<>
+        {
+            productListingPage && (<div className="product-display-container">
+                <div className="product-display-subcontainer">
+                    <div className="product-categories-container">
+                        {productsJsonData.map((productsJsonDataCategories, index) => {
+                            const categories = Object.keys(productsJsonDataCategories[data] || {});
+                            return (
+                                <div key={index} className="product-categoriesname">
+                                    <span onClick={() => { setCategories('') }}>All</span>
+                                    {categories.map((Category, categoryIndex) => (
+                                        <span key={categoryIndex} onClick={() => {
+                                            setCategories(Category)
+                                        }}>{Category}</span>
+                                    ))}
+                                </div>
+                            );
+                        })}
+                    </div>
+                    <div className="product-display-page-container">
+                        <div className="filter-container">
+                            <div>
+                                <h2>Filter / Sort</h2>
+                                <hr />
                             </div>
-                        );
-                    })}
-                </div>
-                <div className="product-display-page-container">
-                    <div className="filter-container">
-                        <div>
-                            <h2>Filter / Sort</h2>
-                            <hr />
-                        </div>
-                        <div className="search-products-container">
-                            <div className="search-product">
-                                <input type="text" placeholder="Search For the Products" onChange={(e) => {
-                                    setSerachedProduct(e.target.value.toLowerCase())
-                                }} />
-                                <SearchIcon sx={{ color: "gray", cursor: "pointer" }} onClick={() => { HandleSearchProduct(serachedProduct) }} />
+                            <div className="search-products-container">
+                                <div className="search-product">
+                                    <input type="text" placeholder="Search For the Products" onChange={(e) => {
+                                        setSerachedProduct(e.target.value.toLowerCase())
+                                    }} />
+                                    <SearchIcon sx={{ color: "gray", cursor: "pointer" }} onClick={() => { HandleSearchProduct(serachedProduct) }} />
+                                    <br />
+                                </div>
                                 <br />
-                            </div>
-                            <br />
-                            <span>Filter By Price</span>
-                            <br />
-                            {priceRanges.map((range) => (
-                                <div>
-                                    <input type="radio" value={`${range.value[0]}-${range.value[1]}`} name="pricecheckbox" onClick={() => { handleCheckBoxes(range.value) }} /><span> {range.label}</span>
-                                    <br />
-                                </div>
-
-                            ))
-                            }
-                            <br />
-                            <hr />
-                            <span>Filter By Color</span>
-                            <br />
-                            {filterColors.map((colors) => (
-                                <div>
-                                    <input type="radio" name="price" value={colors.label} onClick={() => { handleCheckboxColor(colors) }} /> <span>{colors.label}</span>
-                                    <br />
-                                </div>
-                            ))
-                            }
-
-                        </div>
-                    </div>
-                    <div className="product-display-page">
-                        <div className="products-images">
-
-                            {titlesAndDescriptions.map((result, index) => {
-                                const isLongDescription = result.description.length > 12;
-                                const displayedDescription = expanded[index]
-                                    ? result.description
-                                    : result.description.slice(0, 16) +
-                                    (isLongDescription ? "..." : "");
-
-                                return (
-                                    <div key={index} className="product-images-content">
-                                        <img src={result.image} alt={result.title} />
-                                        <span>{result.title}</span>
-                                        <span className="desc">
-                                            {displayedDescription}
-                                            {isLongDescription && (
-                                                <button
-                                                    onClick={() => toggleReadMore(index)}
-                                                    className="read-more-btn"
-                                                >
-                                                    {expanded[index] ? "Read Less" : "Read More"}
-                                                </button>
-                                            )}
-                                        </span>
-                                        <span>{result.price}</span>
+                                <span>Filter By Price</span>
+                                <br />
+                                {priceRanges.map((range) => (
+                                    <div>
+                                        <input type="radio" value={`${range.value[0]}-${range.value[1]}`} name="pricecheckbox" onClick={() => { handleCheckBoxes(range.value) }} /><span> {range.label}</span>
+                                        <br />
                                     </div>
-                                );
-                            })}
+
+                                ))
+                                }
+                                <br />
+                                <hr />
+                                <span>Filter By Color</span>
+                                <br />
+                                {filterColors.map((colors) => (
+                                    <div>
+                                        <input type="radio" name="price" value={colors.label} onClick={() => { handleCheckboxColor(colors) }} /> <span>{colors.label}</span>
+                                        <br />
+                                    </div>
+                                ))
+                                }
+
+                            </div>
+                        </div>
+                        <div className="product-display-page">
+                            <div className="products-images">
+
+                                {titlesAndDescriptions.map((result, index) => {
+                                    const isLongDescription = result.description.length > 12;
+                                    const displayedDescription = expanded[index]
+                                        ? result.description
+                                        : result.description.slice(0, 16) +
+                                        (isLongDescription ? "..." : "");
+
+                                    return (
+                                        <div key={index} className="product-images-content">
+                                            <img src={result.image} alt={result.title} onClick={() => { HandleDisplayProducts(result) }} />
+                                            <span>{result.title}</span>
+                                            <span className="desc">
+                                                {displayedDescription}
+                                                {isLongDescription && (
+                                                    <button
+                                                        onClick={() => toggleReadMore(index)}
+                                                        className="read-more-btn"
+                                                    >
+                                                        {expanded[index] ? "Read Less" : "Read More"}
+                                                    </button>
+                                                )}
+                                            </span>
+                                            <span>{result.price}</span>
+                                        </div>
+                                    );
+                                })}
+
+                            </div>
 
                         </div>
 
                     </div>
-
                 </div>
-            </div>
-        </div>
+            </div>)
+        }
+        {productDisplayPage && (
+            <ProductView dispalayProduct={dispalayProduct} />
+        )}
+
+    </>
+
     );
 };
 
