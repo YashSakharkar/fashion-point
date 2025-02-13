@@ -7,6 +7,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 const AddToCart = () => {
 
     return (<>
+       <Header/>
         <div className="add-to-cart-container">
             <div className="add-to-cart-subcontainer">
                 <div className="add-to-cat-co-container">
@@ -42,6 +43,7 @@ const AddToCart = () => {
                 </div>
             </div>
         </div>
+        <Footer/>
     </>)
 }
 export default AddToCart;
