@@ -1,21 +1,27 @@
 import React, { useState } from "react";
 import "./Header.css";
+import { useNavigate } from "react-router-dom";
 import Face6Icon from "@mui/icons-material/Face6";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-const Header = ({ setData, setvisibility,setSHowLogin }) => {
+import Loader from "../Loader/Loader";
+const Header = () => {
   
   const [visible, setVisisble] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [person, setPerson] = useState("");
-  const [Loader, setLoader] = useState(false);
+  const [loader, setLoader] = useState(false);
   const [showLoginss, setSHowLoginss] = useState(false);
 
-  if (person === "HOME" || person === "") {
-    setvisibility(false);
-  } else {
-    setvisibility(true);
-    setData(person);
+  // if (person === "HOME" || person === "") {
+  //   setvisibility(false);
+  // } else {
+  //   setvisibility(true);
+  //   setData(person);
+  // }
+  const navigate = useNavigate();
+  const HandlePerson =() =>{
+    navigate(`/products?data=${person}`) 
   }
 
   const handleLanguageClick = (language) => {
@@ -23,7 +29,7 @@ const Header = ({ setData, setvisibility,setSHowLogin }) => {
   };
 
   const [selected, setSelected] = useState("HOME");
-  setSHowLogin(showLoginss)
+  //setSHowLogin(showLoginss)
 
   return (
     <>
@@ -33,9 +39,10 @@ const Header = ({ setData, setvisibility,setSHowLogin }) => {
             <ul className="menu-bar">
               <li
                 onClick={() => {
-                  setPerson("HOME");
+               navigate("/")
+                 // setPerson("HOME");
                   setSelected("HOME");
-                  setSHowLoginss(false)
+                 // setSHowLoginss(false)
                 }}
                 className={
                   selected === "HOME"
@@ -48,8 +55,9 @@ const Header = ({ setData, setvisibility,setSHowLogin }) => {
               <li
                 onClick={() => {
                   setPerson("MENS");
+                  HandlePerson()
                   setSelected("MENS");
-                  setSHowLoginss(false)
+                  //setSHowLoginss(false)
                 }}
                 className={
                   selected === "MENS"
@@ -63,8 +71,10 @@ const Header = ({ setData, setvisibility,setSHowLogin }) => {
               <li
                 onClick={() => {
                   setPerson("WOMENS");
+                  HandlePerson()
+                  //setPerson("WOMENS");
                   setSelected("WOMENS");
-                  setSHowLoginss(false)
+                  //setSHowLoginss(false)
                 }}
                 className={
                   selected === "WOMENS"
@@ -78,8 +88,10 @@ const Header = ({ setData, setvisibility,setSHowLogin }) => {
               <li
                 onClick={() => {
                   setPerson("KIDS");
+                  HandlePerson()
+                  //setPerson("KIDS");
                   setSelected("KIDS");
-                  setSHowLoginss(false)
+                  //setSHowLoginss(false)
                 }}
                 className={
                   selected === "KIDS"
@@ -91,9 +103,9 @@ const Header = ({ setData, setvisibility,setSHowLogin }) => {
               </li>
               <li
                 onClick={() => {
-                  setPerson("ACCESORIES");
+                 // setPerson("ACCESORIES");
                   setSelected("ACCESORIES");
-                  setSHowLoginss(false)
+                 // setSHowLoginss(false)
                 }}
                 className={
                   selected === "ACCESORIES"
@@ -162,6 +174,7 @@ const Header = ({ setData, setvisibility,setSHowLogin }) => {
                 }>Returns & Orders</li>
               <li  onClick={() => {
                   setSelected("profile");
+                  navigate("/login")
                 }}
                 className={
                   selected === "profile"
@@ -171,13 +184,13 @@ const Header = ({ setData, setvisibility,setSHowLogin }) => {
                 <Face6Icon sx={{ color: "aqua", fontSize: 30 }} onClick={()=>{
                   setSHowLoginss(true)
                   // setVisisble(false)
-                  setvisibility(false)
+                  //setvisibility(false)
               
                   }} />
               </li>
               <li  onClick={() => {
                   setSelected("shoppingicon");
-                 setSHowLoginss(false)
+                   navigate("/addtocart")
                 }}
                 className={
                   selected === "shoppingicon"
@@ -191,6 +204,11 @@ const Header = ({ setData, setvisibility,setSHowLogin }) => {
           </nav>
         </div>
       </div>
+      {
+        loader &&(
+         <Loader/>
+        )
+      }
     </>
   );
 };

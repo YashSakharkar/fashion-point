@@ -5,6 +5,8 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 import React, { useState } from "react";
 import "./Login.css";
+import Header from "../../Header/Header";
+import Footer from "../../Footer/Footer";
 
 const Login = () => {
   const [login, setLogin] = useState("login");
@@ -19,6 +21,7 @@ const Login = () => {
 
   return (
     <>
+    <Header/>
       <div className="registration-container">
         <div className={`form-container ${login ? " login" : " signup"}`}>
 
@@ -120,6 +123,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

@@ -3,8 +3,11 @@ import productsJsonData from "./ProductJsonData";
 import "./ProductDisplay.css";
 import SearchIcon from "@mui/icons-material/Search";
 import ProductView from "../ProductView/ProductView";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import { useLocation } from "react-router-dom";
 
-const ProductDataDisplay = ({ data }) => {
+const ProductDataDisplay = () => {
     const [titlesAndDescriptions, setTitlesAndDescriptions] = useState([]);
     const [expanded, setExpanded] = useState({});
     const [categories, setCategories] = useState('')
@@ -13,6 +16,9 @@ const ProductDataDisplay = ({ data }) => {
     const [dispalayProduct, setDisplayProducts] = useState([]);
     const [productListingPage, setProductListingPage] = useState(true);
     const [productDisplayPage, setProductDissplayPage] = useState(false);
+    const location = useLocation();
+    const params = new URLSearchParams(location.search);
+    const data = params.get("data");
     const priceRanges = [
         { label: "500 - 700", value: [500, 700] },
         { label: "700 - 900", value: [700, 900] },
@@ -27,6 +33,7 @@ const ProductDataDisplay = ({ data }) => {
         { label: "Yellow" },
         { label: "Green" },
     ];
+    console.log(data)
     var productItems = productsJsonData[0][data];
     useEffect(() => {
         var result = [];
@@ -108,6 +115,7 @@ const ProductDataDisplay = ({ data }) => {
 
 
     return (<>
+        <Header />
         {
             productListingPage && (<div className="product-display-container">
                 <div className="product-display-subcontainer">
@@ -206,7 +214,7 @@ const ProductDataDisplay = ({ data }) => {
         {productDisplayPage && (
             <ProductView dispalayProduct={dispalayProduct} />
         )}
-
+        <Footer />
     </>
 
     );

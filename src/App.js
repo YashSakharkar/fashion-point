@@ -1,8 +1,8 @@
-import Footer from "./Footer/Footer";
-import Header from "./Header/Header";
-import ContentPage from "./ContentPage/ContentPage";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import Login from "./Registration/Login/Login"
+import ContentPage from "./ContentPage/ContentPage";
+import ProductDataDisplay from "./ProductDataDisplay/ProductDataDisplay";
+import Login from "./Registration/Login/Login";
 import AddToCart from "./AddToCart/AddToCart";
 function App() {
   const [data, setData] = useState(" ");
@@ -11,11 +11,14 @@ function App() {
   console.log(showLogin);
   return (
     <div>
-      <Header setData={setData} setvisibility={setvisibility} setSHowLogin={setSHowLogin}/>
-      <ContentPage data={data} visibility={visibility} showLogin={showLogin} />
-            {/* <AddToCart/>  */}
-      <Footer />
-      {/* <AddToCart/> */}
+      <Router>
+        <Routes>
+         <Route path="/" element={<ContentPage/>}/>
+         <Route path="/products" element={<ProductDataDisplay/>}/>
+         <Route path="/login" element={<Login/>}/>
+         <Route path="/addtocart" element={<AddToCart/>}/>
+        </Routes>
+      </Router>
     </div>
   );
 }
