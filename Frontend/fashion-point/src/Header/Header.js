@@ -224,6 +224,7 @@ const Header = () => {
                 <Face6Icon
                   sx={{ color: "aqua", fontSize: 30 }}
                   onClick={() => {
+                    navigate("/login")
                     setSHowLoginss(true);
                   }}
                 />

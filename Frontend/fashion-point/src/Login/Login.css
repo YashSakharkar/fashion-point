@@ -1,0 +1,52 @@
+.register-container {
+    border: 1px solid red;
+}
+
+.register-sub-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 60px auto;
+}
+
+.register-user-content {
+    /* border: 1px solid yellow; */
+    background-color: #2C8AB5;
+    width: 400px;
+    max-width: 600px;
+    height: auto;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+}
+
+.register-content input {
+    width: 300px;
+    height: 40px;
+    margin: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.register-content h1 {
+    text-align: center;
+}
+
+.register-content button {
+    margin-top: 10px;
+    margin-left: 80px;
+    width: 150px;
+    height: 35px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.register-content span{
+   
+    font-weight: bolder;
+}
