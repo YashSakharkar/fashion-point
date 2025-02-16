@@ -1,8 +1,13 @@
 import React from "react";
 import "./ReturnPolicy.css";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const ReturnPolicy = () => {
   return (
+    <>
+
+  <Header/>
     <div className="policy-container">
       <h1 className="policy-title">Return & Refund Policy</h1>
 
@@ -79,6 +84,8 @@ const ReturnPolicy = () => {
         <p>For any queries, contact us at <a href="mailto:syproject13@gmail.com" className="policy-link">support@fashionpoint.com</a></p>
       </footer>
     </div>
+    <Footer/>
+    </>
   );
 };
 

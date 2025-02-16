@@ -1,63 +1,43 @@
-import React, { useState ,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./Header.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Face6Icon from "@mui/icons-material/Face6";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Loader from "../Loader/Loader";
-import PageNotFound from "../404page/PageNotFound";
+
 const Header = () => {
   const [visible, setVisisble] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [person, setPerson] = useState("");
   const [loader, setLoader] = useState(false);
   const [showLoginss, setSHowLoginss] = useState(false);
+  const [selected, setSelected] = useState("HOME");
 
   const navigate = useNavigate();
+  const location = useLocation();
+
   useEffect(() => {
-    if (person) {
-      HandlePerson(person);
+    if (location.pathname === "/") {
+      setSelected("HOME");
+    } 
+    else if (location.pathname === "/FAQPage") {
+      setSelected("faqs"); 
     }
-  }, [person]); 
+    else if (location.pathname === "/return&order") {
+      setSelected("Return"); 
+    }else if (location.pathname.includes("/products")) {
+      const category = new URLSearchParams(location.search).get("data");
+      if (category) {
+        setSelected(category.toUpperCase());
+      }
+    }
+  }, [location]);
+
   const HandlePerson = (person) => {
-    console.log(person)
-   navigate(`/products?data=${encodeURIComponent(person)}`);
+    setSelected(person); // ✅ Ensures selection updates immediately
+    navigate(`/products?data=${encodeURIComponent(person)}`);
   };
-
-  // const HandlePerson = () => {
-  //   setLoader(true);
-  //   setTimeout(() => {
-  //     if (
-  //       person === "HOME" ||
-  //       person === "MENS" ||
-  //       person === "WOMENS" ||
-  //       person === "KIDS" ||
-  //       person === "ACCESSORIES"
-  //     ) {
-  //       navigate(`/products?data=${person}`);
-  //       setLoader(false);
-  //     }
-  //   }, 1000);
-  // };
-
-  // const HandlePerson = () => {
-  //   setLoader(true);
-  
-  //   setTimeout(() => {
-  //     if (["HOME", "MENS", "WOMENS", "KIDS", "ACCESSORIES"].includes(person)) {
-  //       navigate(`/products?data=${person}`);
-  //     } else {
-  //       navigate("/PageNotFound"); 
-  //     }
-  //     setLoader(false);
-  //   }, 1000);
-  // };
-  
-  const handleLanguageClick = (language) => {
-    setSelectedLanguage(language);
-  };
-
-  const [selected, setSelected] = useState("HOME");
 
   return (
     <>
@@ -80,10 +60,7 @@ const Header = () => {
               </li>
 
               <li
-                onClick={() => {
-                  setPerson("MENS");
-                  setSelected("MENS");
-                }}
+                onClick={() => HandlePerson("MENS")}
                 className={`hLi ${
                   selected === "MENS"
                     ? "hDR-selected-menu"
@@ -94,10 +71,7 @@ const Header = () => {
               </li>
 
               <li
-                onClick={() => {
-                  setPerson("WOMENS");
-                  setSelected("WOMENS");
-                }}
+                onClick={() => HandlePerson("WOMENS")}
                 className={`hLi ${
                   selected === "WOMENS"
                     ? "hDR-selected-menu"
@@ -108,10 +82,7 @@ const Header = () => {
               </li>
 
               <li
-                onClick={() => {
-                  setPerson("KIDS");
-                  setSelected("KIDS");
-                }}
+                onClick={() => HandlePerson("KIDS")}
                 className={`hLi ${
                   selected === "KIDS"
                     ? "hDR-selected-menu"
@@ -120,11 +91,9 @@ const Header = () => {
               >
                 KIDS
               </li>
+
               <li
-                onClick={() => {
-                  setPerson("ACCESSORIES");
-                  setSelected("ACCESSORIES");
-                }}
+                onClick={() => HandlePerson("ACCESSORIES")}
                 className={`hLi ${
                   selected === "ACCESSORIES"
                     ? "hDR-selected-menu"
@@ -141,11 +110,13 @@ const Header = () => {
               src="/images/Header/logonew.webp"
               alt="logo-img"
               className="logoImg"
-              onClick={()=>{
-                navigate("/")
+              onClick={() => {
+                navigate("/");
+                setSelected("HOME");
               }}
             />
           </div>
+
           <nav className="hDR-header-menu ">
             <ul className="hDR-menu-bar">
               <li
@@ -169,43 +140,38 @@ const Header = () => {
                       : "hDR-Unselected-selected-menu"
                   }
                 >
-                  {/* {selectedLanguage ? selectedLanguage : <span>English</span>} */}
-                  {selectedLanguage ? (
-                    selectedLanguage
-                  ) : (
-                    <span className="lang"> English</span>
-                  )}
+                  {selectedLanguage ? selectedLanguage : <span>English</span>}
                 </span>
 
                 <KeyboardArrowDownIcon className="downArrow" />
                 {visible && (
                   <ul className="hDR-languages-block">
                     <li
-                      onClick={() => handleLanguageClick("English")}
+                      onClick={() => setSelectedLanguage("English")}
                       className="hLi"
                     >
                       English
                     </li>
                     <li
-                      onClick={() => handleLanguageClick("Hindi")}
+                      onClick={() => setSelectedLanguage("Hindi")}
                       className="hLi"
                     >
                       Hindi
                     </li>
                     <li
-                      onClick={() => handleLanguageClick("Telugu")}
+                      onClick={() => setSelectedLanguage("Telugu")}
                       className="hLi"
                     >
                       Telugu
                     </li>
                     <li
-                      onClick={() => handleLanguageClick("Kannada")}
+                      onClick={() => setSelectedLanguage("Kannada")}
                       className="hLi"
                     >
                       Kannada
                     </li>
                     <li
-                      onClick={() => handleLanguageClick("Marathi")}
+                      onClick={() => setSelectedLanguage("Marathi")}
                       className="hLi"
                     >
                       Marathi
@@ -231,7 +197,9 @@ const Header = () => {
               <li
                 onClick={() => {
                   setSelected("Return");
-                  setSHowLoginss(false);
+                
+                  //setPerson("Return")
+                  navigate("/return&order")
                 }}
                 className={`hLi ${
                   selected === "Return"

@@ -5,6 +5,7 @@ import ProductDataDisplay from "./ProductDataDisplay/ProductDataDisplay";
 import Login from "./Registration/Login/Login";
 import AddToCart from "./AddToCart/AddToCart";
 import FAQPage from "./FAQpage/FAQpage";
+import ReturnPolicy from "./ReturnPolicy/ReturnPolicy"
 
 function App() {
   const [data, setData] = useState(" ");
@@ -18,7 +19,7 @@ function App() {
          <Route path="/" element={<ContentPage/>}/>
          <Route path="/products" element={<ProductDataDisplay/>}/>
          <Route path="/FAQPage" element={<FAQPage/>}/>
-
+         <Route path="/return&order" element={<ReturnPolicy/>}/>
          <Route path="/login" element={<Login/>}/>
          <Route path="/addtocart" element={<AddToCart/>}/>
         </Routes>

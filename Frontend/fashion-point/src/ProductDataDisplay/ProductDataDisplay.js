@@ -5,12 +5,14 @@ import SearchIcon from "@mui/icons-material/Search";
 import ProductView from "../ProductView/ProductView";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 const ProductDataDisplay = () => {
     const [titlesAndDescriptions, setTitlesAndDescriptions] = useState([]);
     const [expanded, setExpanded] = useState({});
     const [categories, setCategories] = useState('')
+    
     const [serachedProduct, setSerachedProduct] = useState('')
     const [originalProducts, setOriginalProducts] = useState([]);
     const [dispalayProduct, setDisplayProducts] = useState([]);

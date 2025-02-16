@@ -73,6 +73,7 @@ const ProductView = ({ dispalayProduct }) => {
         )}
 
         {zoomedImg && (
+          <div className="ProductView-zoom-container">
           <div className="ProductView-container-down">
             <div className="ProductView-contain-down">
               <div>
@@ -87,6 +88,8 @@ const ProductView = ({ dispalayProduct }) => {
               />
             </div>
           </div>
+          </div>
+          
         )}
       </div>
     </div>
