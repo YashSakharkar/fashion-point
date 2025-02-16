@@ -1,0 +1,151 @@
+.cfaq {
+  border: 1px solid #EAEDED;
+  background-color: #EAEDED;
+}
+
+.CommentFaQ {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+
+}
+
+.review-card {
+  width: 80%;
+  max-width: 1200px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.comment-section {
+    margin-top: 20px;
+  padding-top: 10px;
+}
+
+.comment-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.comment-input,
+.comment-textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.comment-textarea {
+  height: 120px;
+  resize: none;
+  overflow: hidden;
+   line-height: 1.5em;
+
+}
+
+.Cratting {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+}
+
+.star-rating {
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.rating-star {
+  transition: fill 0.2s ease-in-out;
+}
+
+.rating-star:hover {
+  fill: #ffd700 !important;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.comment-textarea {
+  height: calc(1.5em * 6 + 10px);
+  resize: none;
+  overflow: hidden;
+  line-height: 1.5em;
+  padding: 8px;
+}
+
+.comment-button {
+  margin-top: 10px;
+  padding: 8px 16px;
+   border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: medium;
+  background-color: whitesmoke;
+  color: black;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+  transition: box-shadow 0.3s ease;
+}
+
+.comment-button:hover {
+  background: #61a8f4;
+}
+
+.comment-list {
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.comment-item {
+  margin-top: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar-small {
+  width: 30px;
+  height: 30px;
+  background: gray;
+  border-radius: 50%;
+}
+
+.comment-name {
+  font-weight: bold;
+}
+
+.comment-message {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.review-stars {
+  display: flex;
+  gap: 2px;
+  margin-top: 4px;
+}
+

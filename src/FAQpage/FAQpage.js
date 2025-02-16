@@ -1,42 +1,34 @@
- 
 import React, { useState } from "react";
 import "./FAQpage.css";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import faqs from "./FAQData";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const FAQpage = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const handleToggle = (index) => {
-    setActiveIndex(index === activeIndex ? null : index); // Toggle visibility
+    setActiveIndex(index === activeIndex ? null : index);
   };
 
-  const faqs = [
-    {
-      question: "Lorem ipsum dolor sit amet?",
-      answer: "Answer: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolorum harum, sit dignissimos repellendus suscipit error fugiat perferendis placeat commodi itaque, qui, delectus provident saepe.",
-    },
-    {
-      question: "Lorem ipsum dolor sit amet?",
-      answer: "Answer: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolorum harum, sit dignissimos repellendus suscipit error fugiat perferendis placeat commodi itaque, qui, delectus provident saepe.",
-    },
-    {
-      question: "Lorem ipsum dolor sit amet?",
-      answer: "Answer: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolorum harum, sit dignissimos repellendus suscipit error fugiat perferendis placeat commodi itaque, qui, delectus provident saepe.",
-    },
-  ];
-
   return (
-    <div className="faq">
+    <>
+    <Header/>
+<div className="faq">
       <div className="faqContainer">
+        {/* FAQ Header */}
         <div className="faqContainerHeading">
-          <h1 className="faqHeading">FAQ Questions Answered</h1>
+          <h1 className="faqHeading">Frequently Asked Questions</h1>
           <p className="faqPara">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt,
-            possimus.
+            Find answers to commonly asked questions below.
           </p>
         </div>
+
+        {/* FAQ Content */}
         <div className="faqSubContainer">
-          {/* Question and Answer Section */}
+          {/* Left Section: Questions and Answers */}
+
           <div className="faqSubContainerLeft">
             {faqs.map((faq, index) => (
               <div
@@ -47,7 +39,7 @@ const FAQpage = () => {
                 onClick={() => handleToggle(index)}
               >
                 <div className="faqQuestion">
-                  <h1>{faq.question}</h1>
+                  <h2>{faq.question}</h2>
                   <KeyboardArrowDownIcon
                     className={`faqIcon ${
                       activeIndex === index ? "active" : ""
@@ -64,11 +56,26 @@ const FAQpage = () => {
               </div>
             ))}
           </div>
-          {/* Right Section */}
-          <div className="faqSubContainerRight">right</div>
+
+          {/* Right Section: FAQ Image */}
+          <div className="faqSubContainerRight">
+            <div className="faqImgContainer">
+              {/* <img src="/images/testImg/zebronic.jpg" alt="FAQ Illustration" className="faqImg" /> */}
+
+              <img
+                src="/images/FAQpage/fAqq.avif"
+                alt="FAQ Illustration"
+                className="faqImg"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <Footer/>
+    </>
+    
   );
 };
 

@@ -1,19 +1,16 @@
 
 .product-display-container {
-    /* padding: 5px 20px 5px 20px; */
-    padding: 40px;
-    /* border: 10px solid black; */
+    /* border:1px solid red; */
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 100vh; */
     margin: 0;
     background-color: #f8f9fa;
 
 }
 
 .product-display-subcontainer {
-    /* border: 3px solid red; */
     background-color: white;
     padding: 40px 20px;
     margin: 10px;
@@ -23,15 +20,12 @@
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
 }
 
-/* ******************* */
-
-
 .product-categoriesname span {
-
-    padding: 12px 40px;
+/* border: 1px solid red; */
+    padding: 10px 30px;
     background-color: whitesmoke;
     border-radius: 10px;
-    margin: 20px;
+    margin:10px;
     box-shadow: 8px 3px 8px rgba(42, 42, 42, 0.9);
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -45,6 +39,7 @@
 
 
 .read-more-btn {
+    /* border: 10px solid pink; */
     color: blue;
     background: none;
     border: none;
@@ -56,15 +51,14 @@
 }
 
 .desc {
-    /* border: 1px solid red; */
     text-transform: capitalize;
 }
 
 
 
 .product-display-page-container {
-    /* border: 2px solid red; */
-    margin-top: 50px;
+
+    margin-top: 20px;
     display: flex;
     position: relative;
     align-items: center;
@@ -74,18 +68,22 @@
 }
 
 .filter-container {
-    /* border: 1px solid whitesmoke; */
+    
+
     border: 1px solid #c5c6d0;
 
-    width: 25%;
-    padding: 15px 20px 15px 20px;
+    width: 35%;
+    /* padding: 15px 20px 15px 20px; */
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 5px 1px 6px rgba(42, 42, 42, 0.9);
+    overflow: hidden;
 }
 
 
-/* --------------------- */
 .search-product {
+    box-sizing: border-box;
+    
     border: 1px solid rgb(25, 24, 24);
     display: flex;
     align-items: center;
@@ -94,35 +92,56 @@
     max-width: 400px;
     height: auto;
     border-radius: 10px;
-    padding: 5px 10px;
-    box-sizing: border-box;
+    padding: 8px 1px;
+    
+    overflow: hidden;
+
 }
 
 .search-product input {
+    border: 1px solid red;
     all: unset;
     color: black;
     text-align: left;
     outline: none;
     border: none;
     font-weight: bolder;
-    font-size: 16px;
-    padding: 5px 10px;
+    font-size: 14px;
+    padding: 2px 3px;
     height: 30px;
     flex-grow: 1;
     margin: 0;
     box-sizing: border-box;
+    padding-left: 10px;
 }
 
 .search-products-container {
-    /* border: 2px solid red; */
+    /* border: 1px solid red; */
     padding-top: 10px;
+}
+
+
+.product-categories-container {
+    
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-categoriesname {
+    
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .product-display-page {
     border: 1px solid whitesmoke;
-    /* border: 2px solid red; */
+    
+     
     width: 100%;
-    height: 460px;
+    height: 480px;
     padding: 15px 15px;
     border-radius: 10px 5px 5px 10px;
     box-shadow: 5px 1px 6px rgba(42, 42, 42, 0.9);
@@ -131,46 +150,39 @@
 
 .product-display-page {
     scrollbar-width: thin;
-    /* For Firefox */
     scrollbar-color: #888 #f5f5f5;
-    /* Thumb color and track color for Firefox */
     cursor: pointer;
 }
 .products-images {
-    /* border: 2px solid green; */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
 
-    gap: 20px;
+    gap: 15px;
     justify-content: center;
     width: 100%;
 }
 
 .products-images img {
-    /* border: 2px solid gray; */
     width: 100%;
     height: 200px;
     object-fit: cover;
     border-radius: 5px;
-    /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); */
 }
 
 .product-images-content {
     border: 1px solid gainsboro;
-    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 5px;
     background-color: whitesmoke;
     border-radius: 10px;
-    /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); */
     max-width: 300px;
 }
 
 .product-images-content span {
+/* border: 1px solid red; */
     font-family: 𝚈𝚘𝚞𝚛 𝙽𝚊𝚖𝚎;
-    /* border: 1px solid red; */
     border-radius: 5px;
     width: 100%;
     max-width: 300px;

@@ -16,9 +16,13 @@ const ProductDataDisplay = () => {
     const [dispalayProduct, setDisplayProducts] = useState([]);
     const [productListingPage, setProductListingPage] = useState(true);
     const [productDisplayPage, setProductDissplayPage] = useState(false);
+    const [data,setData] = useState('');
     const location = useLocation();
-    const params = new URLSearchParams(location.search);
-    const data = params.get("data");
+    useEffect(() => {
+      const params = new URLSearchParams(location.search);
+      setData(params.get("data") || ""); // Update state immediately when the URL changes
+    }, [location.search])
+
     const priceRanges = [
         { label: "500 - 700", value: [500, 700] },
         { label: "700 - 900", value: [700, 900] },

@@ -1,22 +1,28 @@
+
 import React from "react";
-import "./Banner.css"
+import "./Banner.css";
+
 const Banner = () => {
-    return (<>
-        <div className="Body-Content">
-            <div className="body-banner-image">
-                <img src="./home-new-bg-free-img.jpg" alt="banner-mage" />
+    return (
+        <div className="banner-container">
+            <div className="banner-container-image">
+                <img src="./home-new-bg-free-img.jpg" alt="banner-image" className="banner-img" />
             </div>
             <div className="banner-header">
                 <div>
-                    <h1>Raining Offers for <br /> Cold Winter !</h1>
-                    <h2>25% off on all product</h2>
+                    <h1 className="banner-h1">Raining Offers for <br /> Cold Winter!</h1>
+                    <h2 className="banner-h2">25% off on all products</h2>
                 </div>
-                <div className="banner-btn">
-                    <button>Shop Now</button>
-                    <button>Find More</button>
+                <div className="banner-btn-container">
+                    <button className="banner-shop-btn">Shop Now</button>
+                    <button className="banner-find-btn">Find More</button>
                 </div>
             </div>
         </div>
-    </>)
+    );
 }
-export default Banner
+
+export default Banner;
+
+
+// done

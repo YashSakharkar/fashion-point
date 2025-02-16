@@ -1,49 +1,118 @@
-import React from "react";
-import Header from "../Header/Header"
-import Footer from "../Footer/Footer"
-import "./AddToCart.css"
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
-const AddToCart = () => {
+import React, { useState } from "react";
+import "./AddToCart.css";
+import { Trash2, Plus, Minus } from "lucide-react";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
-    return (<>
-       <Header/>
-        <div className="add-to-cart-container">
-            <div className="add-to-cart-subcontainer">
-                <div className="add-to-cat-co-container">
-                    <div className="heading-section">
-                        <h2>ShoppingCart</h2>
-                        <hr />
-                    </div>
-                    <div className="add-to-cart-products-panel">
-                        <div className="add-to-cart-product">
-                            <div className="img-container"><img src="./avatar.png" /></div>
-                            <div className="products-desciption">
-                                <div>
-                                    <span>FRESH FROM LOOM 70% Light Blocking Children Room Curtain | Kid Room Curtain 9 feet with Cartoon Print| Dust Repellent |Kids Parda Screen | Eyelet Ring (2pc, Cloud-M…</span><br />
-                                    <span>In Stock</span><br />
-                                    <span>Eligible for FREE Shipping</span><br />
-                                    <span> 40000    </span>
-                                </div>
-                                <div>
-                                    <div>
-                                        <RemoveIcon />
-                                        <span>0</span>
-                                        <AddIcon />
-                                    </div>
-                                    <div>
-                                        <span>Delete</span>
-                                        <span>Save For Later</span>
-                                        <span>Share</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+const AddToCart = () => {
+  const [quantity, setQuantity] = useState(1);
+
+  return (
+    <>
+    <Header/>
+    <div className="addToCartMain">
+      <div className="aTC-Shopping-cart">
+        <div>
+          <h2 className="ATC-cart-title">Shopping Cart</h2>
         </div>
-        <Footer/>
-    </>)
-}
+        <div className="aPrice-container">
+          <p className="aPrice">price</p>
+        </div>
+        <hr />
+
+        <div className="ATC-cart-item">
+          <img
+            src="/images/AddToCart/zebronic.jpg"
+            alt="Zebronics Speaker"
+            className="ATC-product-image"
+          />
+
+          <div className="ATC-product-details">
+            <h3 className="ATC-product-title">
+              ZEBRONICS BTM9801RUCF 2.0 Tower Speaker, 120 Watts, Touch Control,
+              HDMI ARC, Coaxial in, Supports...
+            </h3>
+            <p className="ATC-stock-status">In stock</p>
+            <p className="ATC-shipping-info">
+              Eligible for <b>FREE Shipping</b>
+            </p>
+            <p className="ATC-fulfilled-badge">✔ Fulfilled</p>
+
+            {/* <p className="ATC-fulfilled-badge"><DoneTwoToneIcon/> Fulfilled</p> */}
+
+            <div>
+              <label className="ATC-gift-option">
+                <input type="checkbox" />
+                <p className="ATC-giftPara">This will be a gift</p>
+                <a href="#Learn-more" className="ATC-learn">
+                  Learn more
+                </a>
+              </label>
+            </div>
+
+            <div className="ATC-cart-actions">
+              <div className="ATC-quantity-selector">
+                <button
+                  onClick={() => {
+                    if (quantity > 1) setQuantity(quantity - 1);
+                  }}
+                  className="ATC-quality-btn"
+                >
+                  <Minus size={16} />
+                  {/* <RemoveIcon /> */}
+                </button>
+                <span>{quantity}</span>
+                <button
+                  onClick={() => setQuantity(quantity + 1)}
+                  className="ATC-quality-btn"
+                >
+                  <Plus size={16} />
+                  {/* <AddIcon /> */}
+                </button>
+              </div>
+
+              <div>
+                <button
+                  className="ATC-delete-btn"
+                  onClick={() => setQuantity(0)}
+                >
+                  <Trash2 size={16} />
+                  {/* <DeleteIcon/> */}
+                </button>
+              </div>
+            </div>
+
+            <div className="ATC-extra-options">
+              <a href="#Delete" className="ATC-extra-link">
+                Delete
+              </a>{" "}
+              |{" "}
+              <a href="#Share" className="ATC-extra-link">
+                Share
+              </a>
+            </div>
+          </div>
+
+          <div className="ATC-product-price">₹14,999.00</div>
+        </div>
+
+        <hr />
+
+        <div className="ATC-subtotal">
+          <b>
+            Subtotal ({quantity}
+            item{quantity > 1 ? "s" : ""}): ₹{" "}
+            {(quantity * 14999).toLocaleString()}
+            .00
+          </b>
+        </div>
+      </div>
+
+      {/* <img src="/images/testImg/image (2).png" alt="" /> */}
+    </div>
+    <Footer/>
+    </>
+  );
+};
+
 export default AddToCart;
