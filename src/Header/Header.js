@@ -1,69 +1,94 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import "./Header.css";
 import { useNavigate } from "react-router-dom";
 import Face6Icon from "@mui/icons-material/Face6";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Loader from "../Loader/Loader";
+import PageNotFound from "../404page/PageNotFound";
 const Header = () => {
-  
   const [visible, setVisisble] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [person, setPerson] = useState("");
   const [loader, setLoader] = useState(false);
   const [showLoginss, setSHowLoginss] = useState(false);
 
-  // if (person === "HOME" || person === "") {
-  //   setvisibility(false);
-  // } else {
-  //   setvisibility(true);
-  //   setData(person);
-  // }
   const navigate = useNavigate();
-  const HandlePerson =() =>{
-    navigate(`/products?data=${person}`) 
-  }
+  useEffect(() => {
+    if (person) {
+      HandlePerson(person);
+    }
+  }, [person]); 
+  const HandlePerson = (person) => {
+    console.log(person)
+   navigate(`/products?data=${encodeURIComponent(person)}`);
+  };
 
+  // const HandlePerson = () => {
+  //   setLoader(true);
+  //   setTimeout(() => {
+  //     if (
+  //       person === "HOME" ||
+  //       person === "MENS" ||
+  //       person === "WOMENS" ||
+  //       person === "KIDS" ||
+  //       person === "ACCESSORIES"
+  //     ) {
+  //       navigate(`/products?data=${person}`);
+  //       setLoader(false);
+  //     }
+  //   }, 1000);
+  // };
+
+  // const HandlePerson = () => {
+  //   setLoader(true);
+  
+  //   setTimeout(() => {
+  //     if (["HOME", "MENS", "WOMENS", "KIDS", "ACCESSORIES"].includes(person)) {
+  //       navigate(`/products?data=${person}`);
+  //     } else {
+  //       navigate("/PageNotFound"); 
+  //     }
+  //     setLoader(false);
+  //   }, 1000);
+  // };
+  
   const handleLanguageClick = (language) => {
     setSelectedLanguage(language);
   };
 
   const [selected, setSelected] = useState("HOME");
-  //setSHowLogin(showLoginss)
 
   return (
     <>
-      <div className="header">
-        <div className="container">
-          <nav className="header-menu">
-            <ul className="menu-bar">
+      <div className="hDR-header">
+        <div className="hDR-container">
+          <nav className="hDR-header-menu">
+            <ul className="hDR-menu-bar">
               <li
                 onClick={() => {
-               navigate("/")
-                 // setPerson("HOME");
+                  navigate("/");
                   setSelected("HOME");
-                 // setSHowLoginss(false)
                 }}
-                className={
+                className={`hLi ${
                   selected === "HOME"
-                    ? "selected-menu"
+                    ? "hDR-selected-menu"
                     : "Unselected-selected-menu"
-                }
+                }`}
               >
                 HOME
               </li>
+
               <li
                 onClick={() => {
                   setPerson("MENS");
-                  HandlePerson()
                   setSelected("MENS");
-                  //setSHowLoginss(false)
                 }}
-                className={
+                className={`hLi ${
                   selected === "MENS"
-                    ? "selected-menu"
+                    ? "hDR-selected-menu"
                     : "Unselected-selected-menu"
-                }
+                }`}
               >
                 MENS
               </li>
@@ -71,16 +96,13 @@ const Header = () => {
               <li
                 onClick={() => {
                   setPerson("WOMENS");
-                  HandlePerson()
-                  //setPerson("WOMENS");
                   setSelected("WOMENS");
-                  //setSHowLoginss(false)
                 }}
-                className={
+                className={`hLi ${
                   selected === "WOMENS"
-                    ? "selected-menu"
-                    : "Unselected-selected-menu"
-                }
+                    ? "hDR-selected-menu"
+                    : "hDR-Unselected-selected-menu"
+                }`}
               >
                 WOMENS
               </li>
@@ -88,42 +110,46 @@ const Header = () => {
               <li
                 onClick={() => {
                   setPerson("KIDS");
-                  HandlePerson()
-                  //setPerson("KIDS");
                   setSelected("KIDS");
-                  //setSHowLoginss(false)
                 }}
-                className={
+                className={`hLi ${
                   selected === "KIDS"
-                    ? "selected-menu"
-                    : "Unselected-selected-menu"
-                }
+                    ? "hDR-selected-menu"
+                    : "hDR-Unselected-selected-menu"
+                }`}
               >
                 KIDS
               </li>
               <li
                 onClick={() => {
-                 // setPerson("ACCESORIES");
-                  setSelected("ACCESORIES");
-                 // setSHowLoginss(false)
+                  setPerson("ACCESSORIES");
+                  setSelected("ACCESSORIES");
                 }}
-                className={
-                  selected === "ACCESORIES"
-                    ? "selected-menu"
-                    : "Unselected-selected-menu"
-                }
+                className={`hLi ${
+                  selected === "ACCESSORIES"
+                    ? "hDR-selected-menu"
+                    : "hDR-Unselected-selected-menu"
+                }`}
               >
-                ACCESORIES
+                ACCESSORIES
               </li>
             </ul>
           </nav>
-          <div className="logo-img">
-            <img src="./logo-image-removebg-preview.png" alt="logo-img" />
+
+          <div className="hDR-logo-img">
+            <img
+              src="/images/Header/logonew.webp"
+              alt="logo-img"
+              className="logoImg"
+              onClick={()=>{
+                navigate("/")
+              }}
+            />
           </div>
-          <nav className="header-menu">
-            <ul className="menu-bar">
+          <nav className="hDR-header-menu ">
+            <ul className="hDR-menu-bar">
               <li
-                className="language-logo"
+                className="hDR-language-logo hLi"
                 onMouseEnter={() => {
                   setVisisble(true);
                 }}
@@ -132,71 +158,119 @@ const Header = () => {
                 }}
               >
                 <img src="./Flag_of_India.svg.webp" alt="indian-flag-img" />
-                <span    onClick={() => {
-                  setSelected("English");
-                 setSHowLoginss(false)
-                }}
-                className={
-                  selected === "English"
-                    ? "selected-menu"
-                    : "Unselected-selected-menu"
-                }>
-                 
-                  {selectedLanguage ? selectedLanguage : <span>English</span>}
+                <span
+                  onClick={() => {
+                    setSelected("English");
+                    setSHowLoginss(false);
+                  }}
+                  className={
+                    selected === "English"
+                      ? "hDR-selected-menu"
+                      : "hDR-Unselected-selected-menu"
+                  }
+                >
+                  {/* {selectedLanguage ? selectedLanguage : <span>English</span>} */}
+                  {selectedLanguage ? (
+                    selectedLanguage
+                  ) : (
+                    <span className="lang"> English</span>
+                  )}
                 </span>
-                <KeyboardArrowDownIcon />
+
+                <KeyboardArrowDownIcon className="downArrow" />
                 {visible && (
-                  <ul className="languages-block">
-                    <li onClick={() => handleLanguageClick("English")}>
+                  <ul className="hDR-languages-block">
+                    <li
+                      onClick={() => handleLanguageClick("English")}
+                      className="hLi"
+                    >
                       English
                     </li>
-                    <li onClick={() => handleLanguageClick("Hindi")}>Hindi</li>
-                    <li onClick={() => handleLanguageClick("Telugu")}>
+                    <li
+                      onClick={() => handleLanguageClick("Hindi")}
+                      className="hLi"
+                    >
+                      Hindi
+                    </li>
+                    <li
+                      onClick={() => handleLanguageClick("Telugu")}
+                      className="hLi"
+                    >
                       Telugu
                     </li>
-                    <li onClick={() => handleLanguageClick("Kannada")}>
+                    <li
+                      onClick={() => handleLanguageClick("Kannada")}
+                      className="hLi"
+                    >
                       Kannada
                     </li>
-                    <li onClick={() => handleLanguageClick("Marathi")}>
+                    <li
+                      onClick={() => handleLanguageClick("Marathi")}
+                      className="hLi"
+                    >
                       Marathi
                     </li>
                   </ul>
                 )}
               </li>
-              <li  onClick={() => {
-                  setSelected("Return");
-                 setSHowLoginss(false)
+              <li
+                onClick={() => {
+                  setSelected("faqs");
+                  setSHowLoginss(false);
+                  navigate("/FAQPage");
                 }}
-                className={
-                  selected === "Return"
-                    ? "selected-menu"
-                    : "Unselected-selected-menu"
-                }>Returns & Orders</li>
-              <li  onClick={() => {
-                  setSelected("profile");
-                  navigate("/login")
-                }}
-                className={
-                  selected === "profile"
-                    ? "selected-menu"
-                    : "Unselected-selected-menu"
-                }>
-                <Face6Icon sx={{ color: "aqua", fontSize: 30 }} onClick={()=>{
-                  setSHowLoginss(true)
-                  // setVisisble(false)
-                  //setvisibility(false)
-              
-                  }} />
+                className={`hLi ${
+                  selected === "faqs"
+                    ? "hDR-selected-menu"
+                    : "hDR-Unselected-selected-menu"
+                }`}
+              >
+                FAQs
               </li>
-              <li  onClick={() => {
-                  setSelected("shoppingicon");
-                   navigate("/addtocart")
+
+              <li
+                onClick={() => {
+                  setSelected("Return");
+                  setSHowLoginss(false);
                 }}
-                className={
+                className={`hLi ${
+                  selected === "Return"
+                    ? "hDR-selected-menu"
+                    : "hDR-Unselected-selected-menu"
+                }`}
+              >
+                Returns & Orders
+              </li>
+
+              <li
+                onClick={() => {
+                  setSelected("profile");
+                  navigate("/login");
+                }}
+                className={`hLi ${
+                  selected === "profile"
+                    ? "hDR-selected-menu"
+                    : "hDR-Unselected-selected-menu"
+                }`}
+              >
+                <Face6Icon
+                  sx={{ color: "aqua", fontSize: 30 }}
+                  onClick={() => {
+                    setSHowLoginss(true);
+                  }}
+                />
+              </li>
+              <li
+                onClick={() => {
+                  setSelected("shoppingicon");
+                  navigate("/addtocart");
+                }}
+                className={`hLi ${
                   selected === "shoppingicon"
-                    ? "selected-menu"
-                    : "Unselected-selected-menu"
-                }>
+                    ? "hDR-selected-menu"
+                    : "hDR-Unselected-selected-menu"
+                }`}
+              >
                 <ShoppingCartIcon sx={{ color: "aqua", fontSize: 30 }} />
                 <sup>2</sup>
               </li>
@@ -204,11 +278,8 @@ const Header = () => {
           </nav>
         </div>
       </div>
-      {
-        loader &&(
-         <Loader/>
-        )
-      }
+
+      {loader && <Loader className="loadOver" />}
     </>
   );
 };

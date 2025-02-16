@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import LandingPage from "../LandingPage/LandingPage";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
+
+
+
 const ContentPage = () => {
   const [bannerPageVisisbility, setBannerDisplayPageVisisbility] =
     useState(true);
@@ -37,7 +40,9 @@ const ContentPage = () => {
     <div>
       <Header />
       <LandingPage />
+
       <Footer />
+  
     </div>
   );
 };

@@ -1,4 +1,155 @@
-.img-container img{
+.addToCartMain {
+    display: flex;
+    justify-content: center;
+    background-color: #EAEDED;
+    
+    height: 100vh; /**/
+    
+  }
+  
+  .aTC-Shopping-cart {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    max-width: 1200px;
+    width: 75%;
+    /* margin: auto; */
+    margin: 20px;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+      border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   
+  
+  }
+  
+  .aPrice-container {
+    display: flex;
+  
+  }
+  
+  .aPrice {
     width: 100%;
-    height: 200px;
-}
+    text-align: right;
+    font-size: 20px;
+    padding-right: 5px;
+    color: gray;
+    font-weight: 500;
+  }
+  
+  
+  .ATC-cart-title {
+    font-size: 30px;
+  
+  }
+  
+  .ATC-cart-item {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .ATC-product-image {
+    width: 25%;
+    height: auto;
+    margin-right: 15px;
+  }
+  
+  
+  
+  .ATC-product-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .ATC-stock-status {
+    color: green;
+  }
+  
+  .ATC-shipping-info {
+    font-size: 14px;
+  }
+  
+  .ATC-fulfilled-badge {
+    background: #ddd;
+    padding: 2px 6px;
+    font-size: 12px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-top: 5px;
+  }
+  
+  .ATC-gift-option {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    font-size: 13px;
+  }
+  
+  .ATC-giftPara {
+    margin-left: 3px;
+  }
+  
+  .ATC-learn {
+    margin-left: 5px;
+    color: #0073e6;
+    text-decoration: none;
+  }
+  
+  .ATC-cart-actions {
+    display: flex;
+  
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .ATC-quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 2px solid #ffd814;
+    padding: 5px;
+    border-radius: 5px;
+    background: white;
+  }
+  
+  .ATC-quantity-selector .ATC-quality-btn {
+  
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .ATC-delete-btn {
+    background: #ffcc00;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .ATC-extra-options {
+  
+    margin-top: 5px;
+  }
+  
+  .ATC-extra-options .ATC-extra-link {
+    color: #0073e6;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  .ATC-product-price {
+    /* padding: 10px; */
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    min-width: 120px;
+  }
+  
+  .ATC-subtotal {
+    text-align: right;
+    font-size: 18px;
+    margin-top: 10px;
+  }

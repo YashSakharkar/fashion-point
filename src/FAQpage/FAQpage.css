@@ -1,102 +1,140 @@
-.faq{
-  /* background-color: whitesmoke; */
-  background-color: #a99fc15e;
-  border: 1px solid black;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
- 
-}
 
-.faqContainer{
-    border: 1px solid gray;
-     background-color: #F2EDFF;
-     width: 90%;
-     height: 600px;
-     box-shadow: 1px 1px 5px red;
-     display: flex;
-     flex-direction: column;
-}
 
-.faqContainerHeading{
-    border: 1px solid pink;
-    background-color: #F2EDFF;
-
-}
-.faqSubContainer{
-    border: 1px solid  green;
-    background-color: #F2EDFF;
+.faq {
+    background-color: #EAEDED;
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .faqContainer {
+    background-color: white;
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .faqContainerHeading {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .faqHeading {
+    font-size: 28px;
+    color: #333;
+  }
+  
+  .faqPara {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .faqSubContainer {
+    display: flex;
+    gap: 20px;
+    /* flex-wrap: wrap; */
+  }
+  
+  .faqSubContainerLeft {
+    width: 60%;
+    max-height: 400px; 
+    overflow-y: auto; 
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fafafa;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .faqSubContainerLeft::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .faqSubContainerLeft::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+    
+  }
+  
+  .faqSubContainerLeft::-webkit-scrollbar-thumb {
+    background: #845CFD;
+    border-radius: 5px;
+    cursor: grabbing;
+  }
+  
+  .faqSubContainerRight {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .faqImgContainer {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .faqImg {
     width: 100%;
     height: auto;
-}
-
-.faqSubContainerLeft{
-    border: 1px solid orange;
-    width: 60%;
-    height: 500px;
-    padding: 20px;
-    /* margin: 10px; */
-}
-
-.faqSubContainerRight{
-    border: 1px solid blue;
-    width: 40%;
-    height: auto;
-}
-
-.faqContainerHeading .faqHeading,
-.faqContainerHeading .faqPara
-{
-
-/* border: 1px solid red; */
-display: flex;
-justify-content: center;
-}
-
-.faqQuestionAnswer{
-    border: 1px solid #bbb;
-    background-color: #845CFD;
-    margin-bottom: 15px;
-    width: 80%;
-    /* overflow: hidden; */
-    color: black;
-    padding: 5px;
-}
-.faqAnswer{
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faqQuestionAnswer {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .faqQuestionAnswer:hover {
+    background-color: #f8f8ff;
+    border-color: #845CFD;
+  }
+  
+  .faqQuestion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .faqQuestion h2 {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+  }
+  
+  .faqIcon {
+    transition: transform 0.3s ease;
+    color: #845CFD;
+  }
+  
+  .faqIcon.active {
+    transform: rotate(-180deg);
+  }
+  
+  .faqAnswer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
-
-}
-
-
-.faqAnswer.active {
-    /* max-height: 200px;  */
-    max-height: fit-content;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
+    opacity: 0;
   }
-
-.faqQuestion{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.faqIcon{
-    margin-right: 10px;
-    transition: transform 0.3s ease;
-}
-
-.faqIcon.active{ 
-transform: rotate(-180deg);
-}
   
- 
- 
+  .faqAnswer.active {
+    max-height: 200px;
+    opacity: 1;
+    padding-top: 8px;
+    color: #555;
+    font-size: 16px;
+  }
   
-  
-
   

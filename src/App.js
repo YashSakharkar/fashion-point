@@ -4,6 +4,8 @@ import ContentPage from "./ContentPage/ContentPage";
 import ProductDataDisplay from "./ProductDataDisplay/ProductDataDisplay";
 import Login from "./Registration/Login/Login";
 import AddToCart from "./AddToCart/AddToCart";
+import FAQPage from "./FAQpage/FAQpage";
+
 function App() {
   const [data, setData] = useState(" ");
   const [visibility, setvisibility] = useState(false);
@@ -15,10 +17,14 @@ function App() {
         <Routes>
          <Route path="/" element={<ContentPage/>}/>
          <Route path="/products" element={<ProductDataDisplay/>}/>
+         <Route path="/FAQPage" element={<FAQPage/>}/>
+
          <Route path="/login" element={<Login/>}/>
          <Route path="/addtocart" element={<AddToCart/>}/>
         </Routes>
       </Router>
+
+
     </div>
   );
 }

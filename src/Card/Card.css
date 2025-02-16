@@ -1,148 +1,292 @@
-.card {
-  /* border: 1px solid red; */
+/* .card {
   display: flex;
-  justify-content: center; 
-  align-items: flex-start; 
-  /* min-height: 100vh;  */
-  background-color: #f8f9fa; 
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #f8f9fa;
   padding: 0px 50px 0 50px;
 }
 
 .card-container {
-  /* border:2px solid red; */
   margin-top: 100px;
   margin-bottom: 50px;
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 30px; 
-  max-width: 1500px; 
-
+  gap: 30px;
+  max-width: 1500px;
   padding: 70px;
-  background-color: #ffffff; 
-  border: 1px solid #ddd; 
+  background-color: #ffffff;
+  border: 1px solid #ddd;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .box {
-  /* changes start? */
-  /* width: 400px;  
-   height: 500px;  */
-
   width: calc(33.33% - 30px);
   height: auto;
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  font-size: 18px; 
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
   box-shadow: 10px 3px 10px rgba(0, 0, 0, 0.9);
-
 }
 
-
-
 .box img {
-  width: 100%;  
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block; 
-  opacity: 0.9; 
-  /* position: relative; */
+  display: block;
+  opacity: 0.9;
 }
 
 .box {
-  /* border: 4px solid green; */
-  position:relative; 
-  /* display: flex; */
+  position: relative;
 }
 
 .over-img {
-  /* border: 2px solid black; */
-  position: absolute; 
-  top: 50%; 
-  left: 10%; 
+  position: absolute;
+  top: 50%;
+  left: 10%;
   right: 10%;
-  /* transform: translate(-50%, -50%);   */
-    z-index: 1;  
-flex: wrap;
-/* margin: 20% ; */
-  
-  color: whitesmoke; 
+  z-index: 1;
+  flex: wrap;
+  color: whitesmoke;
 }
 
-.over-img h2{
-  /* color: red; */
+.over-img h2 {
   color: brown;
   font-size: 130%;
-  cursor:grab;
+  cursor: grab;
   display: inline-block;
 }
 
-.over-img p{
-  /* border: 1px solid red; */
-  /* color: gray; */
-  /* color: rgb(88, 82, 82); */
-
+.over-img p {
   color: #4B5320;
-  margin: 0 10% 6% 0 ;
-  cursor:grab;
+  margin: 0 10% 6% 0;
+  cursor: grab;
 }
 
 .shopnow-btn {
-  display: inline-block; 
+  display: inline-block;
   background-color: whitesmoke;
   color: black;
-  font-size:medium;
-  padding: 5px 10px; 
-  white-space: nowrap; 
+  font-size: medium;
+  padding: 5px 10px;
+  white-space: nowrap;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
 }
 
-.shopnow-btn:hover{
+.shopnow-btn:hover {
   background: black;
   color: #ffffff;
-  box-shadow: 2px 2px 2px rgb(255, 255, 255); 
+  box-shadow: 2px 2px 2px rgb(255, 255, 255);
 }
 
-
-
-
-
-/* Styling for small screens (mobile) */
 @media (max-width: 768px) {
   .box {
     width: 100%;
   }
+
   .box .over-img {
-    /* border: 1px solid red; */
-    top:40%; 
-    left: 8%; 
+    top: 40%;
+    left: 8%;
     right: 10%;
-    color: whitesmoke; 
+    color: whitesmoke;
   }
-  
-  .box .over-img h2{
+
+  .box .over-img h2 {
     font-size: 100%;
-   
   }
-  
-  .box .over-img p{
+
+  .box .over-img p {
     font-size: 60%;
-    margin: 0 10% 8% 0 ;
+    margin: 0 10% 8% 0;
   }
-  
-.box .shopnow-btn {
-  font-size:small;
-  padding: 3px 8px; 
+
+  .box .shopnow-btn {
+    font-size: small;
+    padding: 3px 8px;
+  }
+} */
+
+
+/* ********************************** */
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #f8f9fa;
+  /* padding: 0px 50px 0 50px; */
+  padding: 50px;
 }
-  
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  padding: 40px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.card-box {
+  width: calc(33.33% - 20px);
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  position: relative;
+  box-shadow: 10px 3px 10px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+}
+
+.card-box .cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.9;
+}
+
+.card-over-img{
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  right: 20%;
+  transform: translateY(-50%);
+  z-index: 1;
+  flex: wrap;
+  text-align: left;
+  color: whitesmoke;
+}
+
+.card-over-img .cardH2 {
+  /* border: 1px solid red; */
+  line-height: 1.4;
+  color: brown;
+  font-size: 130%;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.card-over-img .cardPara {
+  color: #4B5320;
+  margin: 0 10% 6% 0;
+  /* margin-bottom: 10px; */
+  font-size: 90%;
+ 
+}
+
+.card-shopnow-btn{
+  display: inline-block;
+  background-color: whitesmoke;
+  color: black;
+  font-size: medium;
+  padding: 5px 10px;
+  white-space: nowrap;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.card-shopnow-btn:hover {
+  background: black;
+  color: #ffffff;
+  box-shadow: 2px 2px 2px rgb(255, 255, 255, 1);
 }
 
 
 
 
+/* Styling for tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .card-container {
+    padding: 30px;
+    max-width: 900px;
+  }
 
+  .card-box {
+    width: calc(50% - 20px); /* 2 cards per row */
+  }
 
+  .card-over-img {
+    top: 50%;
+    left: 8%;
+    right: 12%;
+  }
 
+  .card-over-img .cardH2 {
+    font-size: 120%;
+  }
+
+  .card-over-img .cardPara {
+    font-size: 85%;
+  }
+}
+
+/* Styling for mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .card-container {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .card-box {
+    width: 100%; /* Full-width cards */
+  }
+
+  .card-over-img {
+    top: 45%;
+    left: 5%;
+    right: 8%;
+    text-align: left;
+  }
+
+  .card-over-img .cardH2 {
+    font-size: 110%;
+  }
+
+  .card-over-img .cardPara {
+    font-size: 80%;
+  }
+
+  .card-shopnow-btn {
+    font-size: small;
+    padding: 4px 8px;
+  }
+}
+
+/* Styling for small mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .card {
+    padding: 30px 10px;
+  }
+
+  .card-over-img {
+    top: 40%;
+    left: 5%;
+    right: 5%;
+    text-align: left;
+  }
+
+  .card-over-img .cardH2 {
+    font-size: 100%;
+  }
+
+  .card-over-img .cardPara {
+    font-size: 75%;
+  }
+
+  .card-shopnow-btn {
+    font-size: small;
+    padding: 3px 6px;
+  }
+}

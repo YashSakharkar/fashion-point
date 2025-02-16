@@ -1124,7 +1124,74 @@ const productsJsonData=[
           "PRICE": "1400RS"
         }
       ]
-    }
+    },    
+    "ACCESSORIES": {
+        "WATCHES": [
+          {
+            "TITLE": "Classic Leather Watch",
+            "DESCRIPTION": "Elegant brown leather strap watch with a stainless steel case.",
+            "IMAGE": "/images/accessories/watches/classic-leather-watch.png",
+            "PRICE": "1500RS"
+          },
+          {
+            "TITLE": "Digital Sports Watch",
+            "DESCRIPTION": "Water-resistant digital watch with multiple features.",
+            "IMAGE": "/images/accessories/watches/digital-sports-watch.png",
+            "PRICE": "1200RS"
+          },
+          {
+            "TITLE": "Luxury Gold Watch",
+            "DESCRIPTION": "Premium gold-plated analog watch with a sleek design.",
+            "IMAGE": "/images/accessories/watches/luxury-gold-watch.png",
+            "PRICE": "5000RS"
+          }
+        ],
+        "SUNGLASSES": [
+          {
+            "TITLE": "Aviator Sunglasses",
+            "DESCRIPTION": "Classic aviator sunglasses with UV protection.",
+            "IMAGE": "/images/accessories/sunglasses/aviator-sunglasses.png",
+            "PRICE": "800RS"
+          },
+          {
+            "TITLE": "Wayfarer Sunglasses",
+            "DESCRIPTION": "Trendy wayfarer sunglasses with polarized lenses.",
+            "IMAGE": "/images/accessories/sunglasses/wayfarer-sunglasses.png",
+            "PRICE": "1000RS"
+          }
+        ],
+        "BELTS": [
+          {
+            "TITLE": "Leather Belt",
+            "DESCRIPTION": "High-quality genuine leather belt with metal buckle.",
+            "IMAGE": "/images/accessories/belts/leather-belt.png",
+            "PRICE": "700RS"
+          },
+          {
+            "TITLE": "Canvas Belt",
+            "DESCRIPTION": "Casual canvas belt with adjustable strap.",
+            "IMAGE": "/images/accessories/belts/canvas-belt.png",
+            "PRICE": "500RS"
+          }
+        ],
+        "BAGS": [
+          {
+            "TITLE": "Leather Messenger Bag",
+            "DESCRIPTION": "Premium leather messenger bag for office and travel.",
+            "IMAGE": "/images/accessories/bags/leather-messenger-bag.png",
+            "PRICE": "2500RS"
+          },
+          {
+            "TITLE": "Backpack",
+            "DESCRIPTION": "Durable and spacious backpack for daily use.",
+            "IMAGE": "/images/accessories/bags/backpack.png",
+            "PRICE": "1500RS"
+          }
+        ]
+      }
+    
+    
+
   }
   ]
   export default productsJsonData;

@@ -1,7 +1,6 @@
-
 import GoogleIcon from "@mui/icons-material/Google";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 import React, { useState } from "react";
 import "./Login.css";
@@ -21,11 +20,16 @@ const Login = () => {
 
   return (
     <>
-    <Header/>
+      <Header />
       <div className="registration-container">
         <div className={`form-container ${login ? " login" : " signup"}`}>
-
-          <h1>{login ? <img src="./avatar.png" alt="avatar" className="avatar" /> : "Signup"}</h1>
+          <h1>
+            {login ? (
+              <img src="./avatar.png" alt="avatar" className="avatar" />
+            ) : (
+              "Signup"
+            )}
+          </h1>
 
           <div className="form-input">
             {!login && (
@@ -43,7 +47,6 @@ const Login = () => {
               </div>
             )}
             {!login && (
-
               <div className="input input-but" style={{ position: "relative" }}>
                 <input
                   type={showPassword ? "text" : "password"}
@@ -92,7 +95,7 @@ const Login = () => {
             </div>
             <div className="forget-container under">
               {login && (
-                <a href="#" className="forget">
+                <a href="#" className="forget" >
                   Forget Password?
                 </a>
               )}
@@ -105,7 +108,7 @@ const Login = () => {
 
           <div className="dont">
             {login ? "Don't have an account? " : "Already have an account? "}
-            <span onClick={changeform} className="hand under" >
+            <span onClick={changeform} className="hand under">
               {login ? "Signup" : "  Login"}
             </span>
           </div>
@@ -123,7 +126,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
