@@ -3,7 +3,7 @@ import LandingPage from "../LandingPage/LandingPage";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 
-
+import ItemNotFound from "../404page/ItemNotFound";
 
 const ContentPage = () => {
   const [bannerPageVisisbility, setBannerDisplayPageVisisbility] =
@@ -40,7 +40,7 @@ const ContentPage = () => {
     <div>
       <Header />
       <LandingPage />
-
+<ItemNotFound/>
       <Footer />
   
     </div>

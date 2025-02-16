@@ -1,4 +1,5 @@
 .ProductView {
+  border: 1px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,23 +7,27 @@
   padding: 20px;
   box-sizing: border-box;
   width: 100%;
-  height: 80vh;
-  
+
+  height: 90vh;
+  /* height: 100vh; */
+
 }
 
 .ProductView-container {
+  border: 1px solid red;
   position: relative;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
+  grid-template-columns: repeat(2, 1fr);
   background: #FEFEFE;
   border-radius: 15px;
   box-shadow: 5px 8px 5px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   max-width: 800px;
+  /* max-width: 1200px; */
   width: 100%;
   padding: 20px;
-  gap: 20px; 
-margin: 20px;
+  gap: 20px;
+  margin: 20px;
 
   /* margin-left: 400px; */
 }
@@ -49,11 +54,11 @@ margin: 20px;
 }
 
 
-.selectedImg{
+.selectedImg {
   transform: scale(5);
 }
 
-.UnselectedImg{
+.UnselectedImg {
   background-color: transparent;
 }
 
@@ -138,7 +143,7 @@ margin: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.ProductView-buttons{
+.ProductView-buttons {
   display: flex;
   /* margin: 10px; */
   gap: 20px;
@@ -147,7 +152,7 @@ margin: 20px;
 
 
 
- .ProductView-button-icons {
+.ProductView-button-icons {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -165,9 +170,9 @@ margin: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f4f4f4; 
-  border: 2px solid #ddd; 
-  border-radius: 50%; 
+  background: #f4f4f4;
+  border: 2px solid #ddd;
+  border-radius: 50%;
   width: 50px;
   height: 50px;
   transition: all 0.3s ease;
@@ -175,81 +180,90 @@ margin: 20px;
 }
 
 .ProductView-icon {
-  color: #555; 
+  color: #555;
   /* transition: color 0.3s ease;  */
 }
 
 .ProductView-icon-wrapper:hover {
-  background: #e0f7fa; 
+  background: #e0f7fa;
   border-color: #00acc1;
 }
 
-.ProductView-FavoriteIcon:hover{
-color: red;
+.ProductView-FavoriteIcon:hover {
+  color: red;
 }
 
-.ProductView-icon-wrapper:hover{
-  border-radius: 10%; 
+.ProductView-icon-wrapper:hover {
+  border-radius: 10%;
 }
 
 
-.ProductView-TurnedInIcon:hover{
+.ProductView-TurnedInIcon:hover {
   color: yellow;
 }
 
+/* ********************* */
 
-
-.ProductView-contain{
+/* .ProductView-contain{
+  border: 1px solid green;
   display: flex;
   flex-direction: column;
+} */
+
+
+.ProductView-zoom-container {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.ProductView-container-down {
 
-.ProductView-container-down{
   position: absolute;
-  top: 25%;
-  left: 30%;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr); 
+
+  /* height: 100vh; */
+  /* display: grid; */
+  /* grid-template-columns: repeat(1, 1fr);  */
   background: #FEFEFE;
+
   border-radius: 15px;
   box-shadow: 5px 8px 5px rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  width:fit-content;
+  /* width:fit-content; */
   max-width: 800px;
-  padding: 20px;
-  /* gap: 20px;  */
-/* border: 1px solid gray; */
+  padding: 10px;
+  margin: 10px;
 
 
 }
-.ProductView-contain-down{
+
+.ProductView-contain-down {
+
   display: flex;
-  height: 450px;
-  
-  /* width: 100%; */
+
+
   border: 1px solid #aaa;
   border-radius: 15px;
   padding: 10px;
 
 }
 
-.ProductView-contain-down img{
+.ProductView-contain-down img {
 
   width: 100%;
-  height: 450px;
-  
+
+  height: 400px;
+
   object-fit: contain;
 
 }
 
 
-.ProductView-contain-down-cross{
-  display: flex;
-  
-}
 
-.ProductView-pricing select{
+
+.ProductView-pricing select {
+  border: 2px solid red;
   width: 60px;
   text-align: center;
 }
@@ -257,27 +271,26 @@ color: red;
 
 
 
+/* ************* */
 
 
+/* 
 
 
-
-
-/* Responsive Design */
 @media (max-width: 768px) {
   .ProductView-container {
-    grid-template-columns: 1fr; /* Single column for smaller screens */
+    grid-template-columns: 1fr; 
     gap: 10px;
   }
 
   .ProductView-container-left,
   .ProductView-container-right {
-    width: 100%; /* Full width for both sections */
+    width: 100%; 
     padding: 10px;
   }
 
   .ProductView-container-left img {
-    max-height: 200px; /* Smaller image for small screens */
+    max-height: 200px; 
   }
 }
 
@@ -293,4 +306,4 @@ color: red;
   .ProductView-price {
     font-size: 1.2rem;
   }
-}
+}  */
