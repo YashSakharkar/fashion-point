@@ -26,6 +26,9 @@ const Header = () => {
     }
     else if (location.pathname === "/return&order") {
       setSelected("Return"); 
+    }
+    else if (location.pathname === "/login") {
+      setSelected("login"); 
     }else if (location.pathname.includes("/products")) {
       const category = new URLSearchParams(location.search).get("data");
       if (category) {
@@ -212,21 +215,17 @@ const Header = () => {
 
               <li
                 onClick={() => {
-                  setSelected("profile");
+                  setSelected("login");
                   navigate("/login");
                 }}
                 className={`hLi ${
-                  selected === "profile"
+                  selected === "login"
                     ? "hDR-selected-menu"
                     : "hDR-Unselected-selected-menu"
                 }`}
               >
                 <Face6Icon
-                  sx={{ color: "aqua", fontSize: 30 }}
-                  onClick={() => {
-                    navigate("/login")
-                    setSHowLoginss(true);
-                  }}
+                  sx={{ color: "aqua", fontSize: 30 }}            
                 />
               </li>
               <li
