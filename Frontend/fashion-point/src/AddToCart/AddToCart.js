@@ -1,11 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./AddToCart.css";
 import { Trash2, Plus, Minus } from "lucide-react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import axios from "axios";
 
 const AddToCart = () => {
   const [quantity, setQuantity] = useState(1);
+  const[addToCartProducts,setAddToCartProducts]= useState([]);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const productsData = await axios.get("http://localhost:9092/getallproducts");
+        if (productsData.data) {
+          console.log(productsData.data);
+          setAddToCartProducts(productsData.data);
+        }
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   return (
     <>

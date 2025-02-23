@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import "./RegisterUser.css"
 import axios from "axios";
+import { data } from "react-router-dom";
 
 const RegisterUser = () => {
     const [name,setName] = useState('');
@@ -15,10 +16,11 @@ const RegisterUser = () => {
         "password":password,
         "confirmpassword":confirmPassword
     }
- const HandleRegisterUser =()=>{
+ const HandleRegisterUser =async()=>{
     console.log(setRegisterUser)
-    const data = axios.post("/registeruser",setRegisterUser);
-    console.log(data)
+  const data =   await axios.post("http://localhost:9092/registeruser",setRegisterUser)
+  console.log(data)
+   
  }
     return (<>
         <Header />

@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Header.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import Face6Icon from "@mui/icons-material/Face6";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Loader from "../Loader/Loader";
+import { UserContext } from "../UserContext/UserContext";
+
 
 const Header = () => {
   const [visible, setVisisble] = useState(false);
@@ -13,23 +15,43 @@ const Header = () => {
   const [loader, setLoader] = useState(false);
   const [showLoginss, setSHowLoginss] = useState(false);
   const [selected, setSelected] = useState("HOME");
-
+  const [loginUser, setLogginUser] = useState(' ')
+  const [avatarname, setAvatarName] = useState(' ')
+  const { loggedInUser } = useContext(UserContext)
+  const [avatarpanel,setavatarPanel] = useState(false)
+  const [avataremail,setAvatarEmail] = useState(' ')
   const navigate = useNavigate();
   const location = useLocation();
+  var loggedInUSerJson = JSON.stringify(loggedInUser, null, 1)
+  var parsedUser = JSON.parse(loggedInUSerJson);
+  useEffect(() => {
+    if (parsedUser != null) {
+      // console.log(parsedUser.name)
+      var avatarName = parsedUser.name.split(" ");
+      const firstPart = avatarName[0];
+      const secondPart = avatarName[1];
+      const FirstLetter = firstPart.charAt(0);
+      const secondLetter = secondPart.charAt(0);
+      setAvatarName(FirstLetter + "" + secondLetter)
+      setLogginUser(parsedUser.name)
+      setAvatarEmail(parsedUser.email)
+    }
+  }, [loginUser])
 
+  //console.log(loginUser)
   useEffect(() => {
     if (location.pathname === "/") {
       setSelected("HOME");
-    } 
+    }
     else if (location.pathname === "/FAQPage") {
-      setSelected("faqs"); 
+      setSelected("faqs");
     }
     else if (location.pathname === "/return&order") {
-      setSelected("Return"); 
+      setSelected("Return");
     }
     else if (location.pathname === "/login") {
-      setSelected("login"); 
-    }else if (location.pathname.includes("/products")) {
+      setSelected("login");
+    } else if (location.pathname.includes("/products")) {
       const category = new URLSearchParams(location.search).get("data");
       if (category) {
         setSelected(category.toUpperCase());
@@ -53,55 +75,50 @@ const Header = () => {
                   navigate("/");
                   setSelected("HOME");
                 }}
-                className={`hLi ${
-                  selected === "HOME"
-                    ? "hDR-selected-menu"
-                    : "Unselected-selected-menu"
-                }`}
+                className={`hLi ${selected === "HOME"
+                  ? "hDR-selected-menu"
+                  : "Unselected-selected-menu"
+                  }`}
               >
                 HOME
               </li>
 
               <li
                 onClick={() => HandlePerson("MENS")}
-                className={`hLi ${
-                  selected === "MENS"
-                    ? "hDR-selected-menu"
-                    : "Unselected-selected-menu"
-                }`}
+                className={`hLi ${selected === "MENS"
+                  ? "hDR-selected-menu"
+                  : "Unselected-selected-menu"
+                  }`}
               >
                 MENS
               </li>
 
               <li
                 onClick={() => HandlePerson("WOMENS")}
-                className={`hLi ${
-                  selected === "WOMENS"
-                    ? "hDR-selected-menu"
-                    : "hDR-Unselected-selected-menu"
-                }`}
+                className={`hLi ${selected === "WOMENS"
+                  ? "hDR-selected-menu"
+                  : "hDR-Unselected-selected-menu"
+                  }`}
               >
                 WOMENS
               </li>
 
               <li
                 onClick={() => HandlePerson("KIDS")}
-                className={`hLi ${
-                  selected === "KIDS"
-                    ? "hDR-selected-menu"
-                    : "hDR-Unselected-selected-menu"
-                }`}
+                className={`hLi ${selected === "KIDS"
+                  ? "hDR-selected-menu"
+                  : "hDR-Unselected-selected-menu"
+                  }`}
               >
                 KIDS
               </li>
 
               <li
                 onClick={() => HandlePerson("ACCESSORIES")}
-                className={`hLi ${
-                  selected === "ACCESSORIES"
-                    ? "hDR-selected-menu"
-                    : "hDR-Unselected-selected-menu"
-                }`}
+                className={`hLi ${selected === "ACCESSORIES"
+                  ? "hDR-selected-menu"
+                  : "hDR-Unselected-selected-menu"
+                  }`}
               >
                 ACCESSORIES
               </li>
@@ -188,11 +205,10 @@ const Header = () => {
                   setSHowLoginss(false);
                   navigate("/FAQPage");
                 }}
-                className={`hLi ${
-                  selected === "faqs"
-                    ? "hDR-selected-menu"
-                    : "hDR-Unselected-selected-menu"
-                }`}
+                className={`hLi ${selected === "faqs"
+                  ? "hDR-selected-menu"
+                  : "hDR-Unselected-selected-menu"
+                  }`}
               >
                 FAQs
               </li>
@@ -200,15 +216,14 @@ const Header = () => {
               <li
                 onClick={() => {
                   setSelected("Return");
-                
+
                   //setPerson("Return")
                   navigate("/return&order")
                 }}
-                className={`hLi ${
-                  selected === "Return"
-                    ? "hDR-selected-menu"
-                    : "hDR-Unselected-selected-menu"
-                }`}
+                className={`hLi ${selected === "Return"
+                  ? "hDR-selected-menu"
+                  : "hDR-Unselected-selected-menu"
+                  }`}
               >
                 Returns & Orders
               </li>
@@ -218,26 +233,52 @@ const Header = () => {
                   setSelected("login");
                   navigate("/login");
                 }}
-                className={`hLi ${
-                  selected === "login"
-                    ? "hDR-selected-menu"
-                    : "hDR-Unselected-selected-menu"
-                }`}
-              >
+                className={`hLi ${selected === "login"
+                  ? "hDR-selected-menu"
+                  : "hDR-Unselected-selected-menu"
+                  }`}
+              >{loginUser == ' ' ?
                 <Face6Icon
-                  sx={{ color: "aqua", fontSize: 30 }}            
-                />
+                  sx={{ color: "aqua", fontSize: 30 }}
+                /> :
+                <div>
+                  <div className="avatar-name-container" onMouseEnter={()=>{  
+                    setavatarPanel(true)}}  onMouseLeave={()=>{setavatarPanel(false)}}>
+                    <div className="avatar-name">
+                      {avatarname}
+                    </div>
+                  </div>
+                  {avatarpanel && (
+                    <div>
+                    <div className="avatart-panel-subcontainer">
+                      <div className="avatar-name-container">
+                        <div className="avatar-name">
+                          {avatarname}
+                        </div>
+                      </div>
+                      <div>
+                         <div>{loginUser}</div>
+                         <div>{avataremail}</div>
+                      </div>
+                    </div>
+                  </div>
+                  )
+                    
+                  }
+              
+                </div>
+
+                }
               </li>
               <li
                 onClick={() => {
                   setSelected("shoppingicon");
                   navigate("/addtocart");
                 }}
-                className={`hLi ${
-                  selected === "shoppingicon"
-                    ? "hDR-selected-menu"
-                    : "hDR-Unselected-selected-menu"
-                }`}
+                className={`hLi ${selected === "shoppingicon"
+                  ? "hDR-selected-menu"
+                  : "hDR-Unselected-selected-menu"
+                  }`}
               >
                 <ShoppingCartIcon sx={{ color: "aqua", fontSize: 30 }} />
                 <sup>2</sup>
