@@ -17,6 +17,7 @@ public class UserComponent {
            userRepository.save(new User("Sahil","Parbat"));
            userRepository.save(new User("ram","shyam"));
            userRepository.save(new User("perna","sakharkar"));
+           userRepository.save(new User("nmfd,efnekfn","mdlwdlwjdwd"));
        }
        else{
            userRepository.save(new User("Yash","Sakharkar"));

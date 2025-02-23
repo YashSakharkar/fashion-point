@@ -50,7 +50,6 @@ body {
 .hDR-menu-bar .hLi:hover {
   cursor: pointer;
   color: black;
-  text-decoration: underline;
   transition: all 0.2s ease-in-out;
 }
 
@@ -176,4 +175,28 @@ sup {
   justify-content: center;
   align-items: center;
   z-index: 9999; /* High z-index to overlay everything */
+}
+
+.avatar-name-container{
+  border: 2px solid whitesmoke;
+  padding: 8px;
+  border-radius: 50%;
+  color: whitesmoke;
+}
+
+.avatart-panel-subcontainer{
+  background-color: #2C8AB5;
+  height: 80px;
+  display: flex;
+  gap: 10px;
+  border: 1px solid rgb(116, 115, 115);
+  color: whitesmoke;
+  font-weight: bolder;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+  padding:  16px 5px;
+  position: absolute;
+  /* margin: 8px; */
+  right: 1%;
+
 }

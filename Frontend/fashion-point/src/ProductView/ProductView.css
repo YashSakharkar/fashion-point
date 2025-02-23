@@ -1,5 +1,5 @@
 .ProductView {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,7 @@
 }
 
 .ProductView-container {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -61,16 +61,6 @@
 .UnselectedImg {
   background-color: transparent;
 }
-
-
-
-
-
-
-
-
-
-
 
 .ProductView-container-right {
   display: flex;
@@ -149,8 +139,6 @@
   gap: 20px;
 
 }
-
-
 
 .ProductView-button-icons {
   display: flex;
@@ -259,17 +247,11 @@
 
 }
 
-
-
-
 .ProductView-pricing select {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   width: 60px;
   text-align: center;
 }
-
-
-
 
 /* ************* */
 

@@ -3,6 +3,7 @@ import "./ProductView.css";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CloseIcon from "@mui/icons-material/Close";
+import axios from "axios";
 
 const ProductView = ({ dispalayProduct }) => {
   const [zoomedImg, setZoomedImg] = useState(false);
@@ -17,6 +18,16 @@ const ProductView = ({ dispalayProduct }) => {
     setZoomedProductView(false)
     //console.log(dispalayProduct)
   };
+  const HandleAddToCartProduct=async()=>{
+    var data ={
+      "title":dispalayProduct.title,
+      "description":dispalayProduct.description,
+      "price":dispalayProduct.price
+    }
+
+    const userData =  await axios.post("http://localhost:9092/getaddtocartproducts",data);
+    console.log(userData)
+  }
   return (
     <div className="ProductView">
       <div className="ProductView-contain">
@@ -55,7 +66,7 @@ const ProductView = ({ dispalayProduct }) => {
               <div className="ProductView-buttons">
                 <button className="ProductView-add-to-cart">Buy Now</button>
 
-                <button className="ProductView-add-to-cart">Add to Cart</button>
+                <button className="ProductView-add-to-cart" onClick={HandleAddToCartProduct}>Add to Cart</button>
               </div>
 
               <div className="ProductView-button-icons">
