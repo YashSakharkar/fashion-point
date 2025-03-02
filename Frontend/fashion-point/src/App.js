@@ -7,6 +7,8 @@ import RegisterUser from "./Registration/RegisterUser"
 import AddToCart from "./AddToCart/AddToCart";
 import FAQPage from "./FAQpage/FAQpage";
 import ReturnPolicy from "./ReturnPolicy/ReturnPolicy"
+import Buynow from "./BuyNow/Buynow";
+
 
 function App() {
   const [data, setData] = useState(" ");
@@ -24,6 +26,7 @@ function App() {
          <Route path="/login" element={<Login/>}/>
          <Route path="/registeruser" element={<RegisterUser/>}/>
          <Route path="/addtocart" element={<AddToCart/>}/>
+         <Route path="/buynow" element={<Buynow/>}/>
         </Routes>
       </Router>
 

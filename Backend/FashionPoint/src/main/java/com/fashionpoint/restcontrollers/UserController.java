@@ -25,6 +25,9 @@ public class UserController {
         jsonObject.put("name",loginUser.get().getName());
         jsonObject.put("password",loginUser.get().getPassword());
         jsonObject.put("confirmpassword",loginUser.get().getConfirmpassword());
+        jsonObject.put("mobilenumber",loginUser.get().getMobileNumber());
+        jsonObject.put("address",loginUser.get().getAddress());
+        jsonObject.put("zipcode",loginUser.get().getZipcode());
         //System.out.println(jsonObject.toString());
        return jsonObject.toString();
     }
@@ -36,6 +39,9 @@ public class UserController {
         registerUser.getEmail();
         registerUser.getPassword();
         registerUser.getConfirmpassword();
+        registerUser.getMobileNumber();
+        registerUser.getAddress();
+        registerUser.getZipcode();
         registeredUserRepository.save(registerUser);
      return "User Has Been successfully saved";
     }

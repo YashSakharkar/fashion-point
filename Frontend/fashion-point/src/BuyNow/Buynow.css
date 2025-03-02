@@ -1,0 +1,132 @@
+.buy-now-container{
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+.main-product-container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  
+}
+.heading h1{
+    text-align: center;
+}
+.product-details-heading{
+    margin-top: 10px;
+}
+.product-details-container{
+    /* border: 1px solid red; */
+    margin: 5px;
+    
+}
+.estimated-delivery{
+    display: flex;
+    gap: 10px;
+    padding: 6px;
+    border: 1px solid gray;
+    height: 40px;
+    border-radius: 4px;
+}
+.buy-now-img{
+    width: 200px;
+    height: auto;
+}
+.product-details-description-conatiner{
+    border: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 4px;
+}
+.quantity-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.free-delivery{
+    border: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    padding: 6px;
+}
+.delivery-address-heading{
+    display: flex;
+    gap:6px;
+
+    margin-top: 20px;
+}
+.address-conatiner{
+    border-radius: 4px;
+    border: 1px solid gray;
+    padding: 6px;
+}
+.address-change{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.price-conatiner{
+    
+    
+    margin-top:20px ;
+    
+}
+
+.price-sub-conatiner{
+    /* border: 1px solid red; */
+    padding:  0px 10px;
+    border-left: 1px solid gray;
+    box-shadow: -4px 0px 5px rgba(0, 0, 0, 0.2); 
+    
+}
+
+.price-sub-conatiner-span{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.price-sub-conatiner-offer{
+    margin: 10px;
+    padding: 8px;
+    background-color: green;
+    color: whitesmoke;
+    border-radius: 3px;
+}
+.price-sub-conatiner-notify{
+    padding: 5px;
+    margin: 15px 15px 0px 15px ;
+    font-size: 11px;
+}
+.continue-btn .continue-button{ 
+    cursor: pointer;
+   border: 1px solid whitesmoke;
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+    font-size: large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-bottom: 20px;
+    background-color: #2C8AB5;
+    color: whitesmoke;
+    border-radius: 5px;
+}
+.qty-add{
+    display: flex;
+    gap: 10px;
+}
+.plus-minus{
+    display: flex;
+    gap: 10px;
+    border: 2px solid black;
+}
+.plus-minus-btn{
+    cursor: pointer;
+}
+.plus-minus-btn:hover{
+    color: yellow;
+}

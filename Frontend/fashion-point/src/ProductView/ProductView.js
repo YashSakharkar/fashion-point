@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./ProductView.css";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CloseIcon from "@mui/icons-material/Close";
 import axios from "axios";
+import { UserContext } from "../UserContext/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const ProductView = ({ dispalayProduct }) => {
   const [zoomedImg, setZoomedImg] = useState(false);
   const [zoomedProductView, setZoomedProductView] = useState(true);
+  const loggedInUser = useContext(UserContext)
   const quantity = [];
+  const navigate = useNavigate();
   for (let i = 1; i <= 100; i++) {
     quantity.push(i)
   }
@@ -19,14 +23,26 @@ const ProductView = ({ dispalayProduct }) => {
     //console.log(dispalayProduct)
   };
   const HandleAddToCartProduct=async()=>{
-    var data ={
-      "title":dispalayProduct.title,
-      "description":dispalayProduct.description,
-      "price":dispalayProduct.price
-    }
-
-    const userData =  await axios.post("http://localhost:9092/getaddtocartproducts",data);
-    console.log(userData)
+  //  console.log(loggedInUser.loggedInUser)
+    if(loggedInUser.loggedInUser){
+      var data ={
+        "title":dispalayProduct.title,
+        "description":dispalayProduct.description,
+        "price":dispalayProduct.price,
+        "image":dispalayProduct.image
+      }
+  
+      const userData =  await axios.post("http://localhost:9092/getaddtocartproducts",data);
+      console.log(userData)
+  }
+  else{
+    
+ alert("Please Login")
+  }
+  }
+  const HandleBuyNow =()=>{
+    console.log(dispalayProduct)
+    navigate(`/buynow?buyedData=${encodeURIComponent(JSON.stringify(dispalayProduct))}`)
   }
   return (
     <div className="ProductView">
@@ -64,7 +80,7 @@ const ProductView = ({ dispalayProduct }) => {
               </div>
 
               <div className="ProductView-buttons">
-                <button className="ProductView-add-to-cart">Buy Now</button>
+                <button className="ProductView-add-to-cart" onClick={HandleBuyNow}>Buy Now</button>
 
                 <button className="ProductView-add-to-cart" onClick={HandleAddToCartProduct}>Add to Cart</button>
               </div>

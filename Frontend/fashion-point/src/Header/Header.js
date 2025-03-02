@@ -24,6 +24,7 @@ const Header = () => {
   const location = useLocation();
   var loggedInUSerJson = JSON.stringify(loggedInUser, null, 1)
   var parsedUser = JSON.parse(loggedInUSerJson);
+  const { addToCartLength } = useContext(UserContext)
   useEffect(() => {
     if (parsedUser != null) {
       // console.log(parsedUser.name)
@@ -51,6 +52,10 @@ const Header = () => {
     }
     else if (location.pathname === "/login") {
       setSelected("login");
+      
+    } 
+    else if (location.pathname === "/addtocart") {
+      setSelected("shoppingicon");
     } else if (location.pathname.includes("/products")) {
       const category = new URLSearchParams(location.search).get("data");
       if (category) {
@@ -64,6 +69,16 @@ const Header = () => {
     navigate(`/products?data=${encodeURIComponent(person)}`);
   };
 
+  const HandleAddToCartSynbol =()=>{
+   // console.log(loggedInUser)
+   setSelected("shoppingicon");
+    if(loggedInUser){
+      navigate("/addtocart");
+    }
+    else{
+      alert("Please Login !!")
+    }
+  }
   return (
     <>
       <div className="hDR-header">
@@ -272,8 +287,14 @@ const Header = () => {
               </li>
               <li
                 onClick={() => {
+                  HandleAddToCartSynbol()
                   setSelected("shoppingicon");
-                  navigate("/addtocart");
+                 // if(loggedInUser.loggedInUser){
+                  //navigate("/addtocart");
+                 // }
+                  //else{
+                 //   alert("please login !")
+                 // }
                 }}
                 className={`hLi ${selected === "shoppingicon"
                   ? "hDR-selected-menu"
@@ -281,7 +302,7 @@ const Header = () => {
                   }`}
               >
                 <ShoppingCartIcon sx={{ color: "aqua", fontSize: 30 }} />
-                <sup>2</sup>
+                <sup>{addToCartLength}</sup>
               </li>
             </ul>
           </nav>
