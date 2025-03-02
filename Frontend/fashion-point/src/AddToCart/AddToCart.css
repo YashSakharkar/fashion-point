@@ -2,9 +2,6 @@
     display: flex;
     justify-content: center;
     background-color: #EAEDED;
-    
-    height: 100vh; /**/
-    
   }
   
   .aTC-Shopping-cart {
@@ -51,7 +48,7 @@
   
   .ATC-product-image {
     width: 25%;
-    height: auto;
+    height: 300px;
     margin-right: 15px;
   }
   
@@ -133,6 +130,10 @@
   
     margin-top: 5px;
   }
+  .ATC-subtotal p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #0073e6;
+  }
   
   .ATC-extra-options .ATC-extra-link {
     color: #0073e6;
@@ -144,8 +145,9 @@
     /* padding: 10px; */
     font-size: 20px;
     font-weight: bold;
-    text-align: right;
+    /* text-align: right; */
     min-width: 120px;
+   text-align: right;
   }
   
   .ATC-subtotal {
@@ -153,3 +155,14 @@
     font-size: 18px;
     margin-top: 10px;
   }
+
+  .totalpricebtn{
+    width: 140px;
+    height: 40px;
+    background-color: green;
+    color: whitesmoke;
+    border-radius: 8px;
+    font-size: medium;
+
+  }
+ 
