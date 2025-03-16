@@ -33,6 +33,7 @@ const ProductView = ({ dispalayProduct }) => {
       }
   
       const userData =  await axios.post("http://localhost:9092/getaddtocartproducts",data);
+      alert("Product Added to the Cart !")
       console.log(userData)
   }
   else{

@@ -6,6 +6,8 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Loader from "../Loader/Loader";
 import { UserContext } from "../UserContext/UserContext";
+import { Close } from "@mui/icons-material";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 const Header = () => {
@@ -18,13 +20,14 @@ const Header = () => {
   const [loginUser, setLogginUser] = useState(' ')
   const [avatarname, setAvatarName] = useState(' ')
   const { loggedInUser } = useContext(UserContext)
-  const [avatarpanel,setavatarPanel] = useState(false)
-  const [avataremail,setAvatarEmail] = useState(' ')
+  const [avatarpanel, setavatarPanel] = useState(false)
+  const [avataremail, setAvatarEmail] = useState(' ')
   const navigate = useNavigate();
   const location = useLocation();
   var loggedInUSerJson = JSON.stringify(loggedInUser, null, 1)
   var parsedUser = JSON.parse(loggedInUSerJson);
   const { addToCartLength } = useContext(UserContext)
+  console.log(loggedInUser)
   useEffect(() => {
     if (parsedUser != null) {
       // console.log(parsedUser.name)
@@ -52,8 +55,8 @@ const Header = () => {
     }
     else if (location.pathname === "/login") {
       setSelected("login");
-      
-    } 
+
+    }
     else if (location.pathname === "/addtocart") {
       setSelected("shoppingicon");
     } else if (location.pathname.includes("/products")) {
@@ -69,13 +72,13 @@ const Header = () => {
     navigate(`/products?data=${encodeURIComponent(person)}`);
   };
 
-  const HandleAddToCartSynbol =()=>{
-   // console.log(loggedInUser)
-   setSelected("shoppingicon");
-    if(loggedInUser){
+  const HandleAddToCartSynbol = () => {
+    // console.log(loggedInUser)
+    setSelected("shoppingicon");
+    if (loggedInUser) {
       navigate("/addtocart");
     }
-    else{
+    else {
       alert("Please Login !!")
     }
   }
@@ -256,31 +259,45 @@ const Header = () => {
                 <Face6Icon
                   sx={{ color: "aqua", fontSize: 30 }}
                 /> :
+
                 <div>
-                  <div className="avatar-name-container" onMouseEnter={()=>{  
-                    setavatarPanel(true)}}  onMouseLeave={()=>{setavatarPanel(false)}}>
+
+                  <div className="avatar-name-container" onClick={() => {
+                    setavatarPanel(true)
+                  }} >
                     <div className="avatar-name">
                       {avatarname}
                     </div>
                   </div>
                   {avatarpanel && (
                     <div>
-                    <div className="avatart-panel-subcontainer">
-                      <div className="avatar-name-container">
-                        <div className="avatar-name">
-                          {avatarname}
+                      <div className="avatart-panel-subcontainer">
+                        <div className="avatar-name-container">
+                          <div className="avatar-name">
+                            {avatarname}
+                          </div>
+                        </div>
+                        <div className="loginuserdata">
+                          <div>{loginUser}</div>
+                          <div>{avataremail}</div>
+                          <div className="sign-out" >
+                            <span>Sign Out</span>
+                            <span><LogoutIcon /></span>
+                          </div>
+                        </div>
+
+                        <div>
+                          <Close onClick={() => {
+                            setavatarPanel(false)
+                          }} />
                         </div>
                       </div>
-                      <div>
-                         <div>{loginUser}</div>
-                         <div>{avataremail}</div>
-                      </div>
+
                     </div>
-                  </div>
                   )
-                    
+
                   }
-              
+
                 </div>
 
                 }
@@ -289,12 +306,12 @@ const Header = () => {
                 onClick={() => {
                   HandleAddToCartSynbol()
                   setSelected("shoppingicon");
-                 // if(loggedInUser.loggedInUser){
+                  // if(loggedInUser.loggedInUser){
                   //navigate("/addtocart");
-                 // }
+                  // }
                   //else{
-                 //   alert("please login !")
-                 // }
+                  //   alert("please login !")
+                  // }
                 }}
                 className={`hLi ${selected === "shoppingicon"
                   ? "hDR-selected-menu"
