@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import "./Login.css"
@@ -11,17 +11,20 @@ const Login = () => {
     const[password,setPassword]= useState('');
     const navigate = new useNavigate()
     const {setLoggedInUser} =  useContext(UserContext);
+
     var loginuser = {
         "email":email,
         "password":password
     }
     const HandleLoginPage= async()=>{
+        const loggedInData =   await axios.post("http://localhost:9092/logginuser", loginuser)
       const data =   await axios.post("http://localhost:9092/getloginuser",loginuser);
       if(data.data !== null && data.status == '200'){
         console.log(data.data)
         setLoggedInUser(data.data)
         navigate("/")
       }
+   
     }
     return (<>                                                                                                                                                  
         <Header />
